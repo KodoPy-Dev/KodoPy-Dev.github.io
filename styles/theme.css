@@ -1,0 +1,86 @@
+
+/*
+Left to Right Layout (PIXELS)
+*------------------------------------------*
+| Side Bar | Margin L | Content | Margin R |
+|   200    |    20    |  <-->   |    20    |
+*------------------------------------------*
+*/
+
+/* -------------------- GLOBAL -------------------- */
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #131313;
+    color: #e0e0e0;
+}
+
+/* -------------------- NAVIGATION -------------------- */
+
+.sidebar {
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    overflow-x: hidden;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #1f1f1f;
+    border-color: #1b1b1b;
+    border-style: solid;
+    border-width: 10px;
+    border-radius: 5px;
+}
+.sidebar img {
+    box-sizing: content-box;
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    object-fit: cover;
+    border-style: solid;
+    border-color: #00ff15;
+    border-width: 3px;
+    border-radius: 50%;
+}
+.sidebar a {
+    display: block;
+    padding: 8px;
+    color: #b0b0b0;
+    text-decoration: none;
+}
+.sidebar a:hover {
+    background-color: #711bc2;
+    color: #ffffff;
+    border-radius: 5px;
+}
+.sidebar a.active {
+    background-color: #12d81c;
+    color: #000000;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.sidebar ul, 
+.sidebar ul li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+}
+
+/* -------------------- BODY -------------------- */
+
+.content {
+    margin-left: 220px;
+    margin-right: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #353535;
+    border-radius: 8px;
+}
