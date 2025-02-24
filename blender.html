@@ -1,79 +1,58 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KodoPy Docs</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Prism -->
-    <link href="styles/prism.css" rel="stylesheet">
-    <!-- KodoPy -->
-    <link href="styles/theme.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>KodoPy Docs</title>
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+		<link href="styles/prism.css" rel="stylesheet">
+		<link href="styles/theme.css" rel="stylesheet">
+	</head>
+	<body>
+		<nav class="sidebar">
+			<img src="images/KodoPy.png">
+			<a href="index.html">Home</a>
+			<a href="vs_code.html">Vs Code</a>
+			<a href="python.html">Python</a>
+			<ul>
+				<li><a href="python_introduction.html">Introduction</a></li>
+				<li><a href="python_operators.html">Operators</a></li>
+				<li><a href="python_functions.html">Functions</a></li>
+				<li><a href="python_types.html">Types</a></li>
+				<li><a href="python_classes.html">Classes</a></li>
+				<li><a href="python_modules.html">Modules</a></li>
+			</ul>
+			<a href="blender.html">Blender</a>
+			<ul>
+				<li><a href="blender_introduction.html">Introduction</a></li>
+				<li><a href="blender_scripting.html">Scripting</a></li>
+				<li><a href="blender_mesh.html">Mesh</a></li>
+			</ul>
+			<a href="graphics.html">Graphics</a>
+			<a href="cmake.html">Cmake</a>
+			<a href="c++.html">C++</a>
+			<ul>
+				<li><a href="c++_introduction.html">Introduction</a></li>
+			</ul>
+		</nav>
+		<div class="content">
 
-<body>
-    <!-- Left Sidebar -->
-    <nav class="sidebar">
-        <img src="imgs/KodoPy.png">
-		<a href="index.html">Home</a>
-		<a href="software.html">Software</a>
-        <ul>
-            <li><a href="setup.html">Editors</a></li>
-            <li><a href="version_control.html">Version Control</a></li>
-        </ul>
-		<a href="setup.html">Setup</a>
-		<a href="python.html">Python</a>
-		<a href="blender.html">Blender</a>
-    </nav>
+<!-- PAGE CONTENT START -->
+<h1>
+    Blender
+</h1>
 
-    <!-- Main Content -->
-    <div class="content">
+<p>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+    Animi optio, ea aliquid veritatis ipsa placeat eveniet saepe similique.
+    Quo suscipit doloremque neque fuga obcaecati illo a.
+</p>
 
-<h2>Welcome to KodoPy Docs</h2>
-<p>This is an example of a left sidebar layout with syntax-highlighted code.</p>
-
-<!-- Code Example with Line Numbers -->      
-<pre class="line-numbers"><code class="language-python"># KodoPy
-def duplicate_mesh_in_place(context, target_obj, ensure_updated=True):
-    if not (isinstance(target_obj, bpy.types.Object) and isinstance(target_obj.data, bpy.types.Mesh)):
-        return
-    if ensure_updated:
-        if target_obj.data.is_editmode:
-            target_obj.update_from_editmode()
-    obj = target_obj.copy()
-    obj.data = target_obj.data.copy()
-    obj.animation_data_clear()
-    collection = None
-    # Place directly into the same collection
-    if len(target_obj.users_collection) == 1:
-        collection = target_obj.users_collection[0]
-    # Attempt to put in best collection
-    if collection is None:
-        visible_collections = visible_scene_collections(context)            
-        for user_collection in target_obj.users_collection:
-            if user_collection in visible_collections:
-                collection = user_collection
-                break
-    # Link to active collection
-    if collection is None:
-        context.collection.objects.link(obj)
-    # Link to found collection
-    else:
-        link_object_to_collection(collection, obj)
-    return obj
-</code></pre>
-
-    </div>
-
-    <!-- Prism JS -->
-    <script src="scripts/prism.js"></script>
-    <script>Prism.highlightAll();</script>
-
-    <!-- KodoPy -->
-    <script src="scripts/logic.js"></script>
-
-    </body>
+<!-- PAGE CONTENT END -->
+		</div>
+		<script src="scripts/prism.js"></script>
+		<script>Prism.highlightAll();</script>
+		<script src="scripts/logic.js"></script>
+	</body>
 </html>

@@ -54,6 +54,7 @@ body {
     padding: 8px;
     color: #b0b0b0;
     text-decoration: none;
+    background-color: #111111;
 }
 .sidebar a:hover {
     background-color: #711bc2;
@@ -72,6 +73,9 @@ body {
     margin: 0;
     padding: 0;
     margin-left: 10px;
+}
+.sidebar ul li a {
+    background-color: #1a1a1a;
 }
 
 /* -------------------- BODY -------------------- */
