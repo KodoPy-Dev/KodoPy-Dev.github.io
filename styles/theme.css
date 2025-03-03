@@ -1,30 +1,17 @@
-
-/*
-Left to Right Layout (PIXELS)
-*------------------------------------------*
-| Side Bar | Margin L | Content | Margin R |
-|   200    |    20    |  <-->   |    20    |
-*------------------------------------------*
-*/
-
-/* padding : Top, Right, Bottom, Left */
-
 /* -------------------- VARIABLES -------------------- */
 
 :root {
     --kodopy-green: #00ff15;
     --kodopy-purple: #711bc2;
-
     --body-bg: #131313;
     --body-font-color: #e0e0e0;
-
-    --side-width: 200px;
+    --side-width: 12rem;
     --side-bg-a: #1f1f1f;
     --side-bg-b: #1a1a1a;
     --side-bg-c: #0f0f0f;
-
     --main-bg: #353535;
     --main-h: #ff7e14;
+    --main-bold: #efff14;
 }
 
 /* -------------------- GLOBAL SELECTORS -------------------- */
@@ -34,6 +21,9 @@ Left to Right Layout (PIXELS)
     padding: 0px;
     box-sizing: border-box;
     color: var(--body-font-color);
+}
+html {
+    font-size: 1em;
 }
 body {
     margin: 0;
@@ -60,8 +50,8 @@ body {
 }
 .sidebar img {
     display: block;
-    width: 90px;
-    height: 90px;
+    width: 8rem;
+    height: 8rem;
     margin: 10px auto;
     object-fit: cover;
 }
@@ -97,65 +87,70 @@ body {
 /* -------------------- CONTENT SELECTORS -------------------- */
 
 .content {
-    margin-left: calc(var(--side-width) + 20px);
-    margin-right: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 10px;
+    margin: 1rem;
+    margin-left: calc(var(--side-width) + 1rem);
+    padding: 1rem;
     background-color: var(--main-bg);
-    border-radius: 8px;
+    border-radius: 5px;
 }
 .content h1, h2, h3, h4, h5, h6 {
-    padding: 5px;
-    padding-left: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-size: 1.25em;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
     font-weight: bold;
-    border-radius: 5px;
     text-align: left;
     background-color: var(--body-bg);
     color: var(--main-h);
+    border-style: solid;
+    border-color: var(--side-bg-c);
+    border-width: 5px;
+    border-radius: 5px;
 }
 .content p {
-    padding: 10px;
+    padding: 0.5rem;
 }
-.content p a {
+.content a {
     color: var(--kodopy-green);
     text-decoration: None;
 }
+.content a:hover {
+    color: #fcf819;
+    text-decoration: underline;
+    font-weight: bold;
+}
 .content ul, ol {
-    margin-left: 2.5em;
+    margin-left: 2rem;
 }
 .content ul li {
     list-style-type: disc;
 }
 .content ol li {
-    padding-left: 5px;
+    padding-left: 0.5rem;
 }
 .content ul li a, ol li a {
-    padding-right: 1em;
+    padding-right: 1rem;
     color: var(--kodopy-green);
     text-decoration: none;
 }
 .content table {
-    padding: 5px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     width: 100%;
     border-collapse: collapse;
-    border-radius: 5px;
 }
 .content th, td {
     text-align: left;
-    padding: 6px;
+    padding: 0.5rem;
+}
+.content th {
+    background-color: var(--side-bg-c);
 }
 .content tr:nth-child(even) {
     background-color: var(--side-bg-a)
 }
 .content tr:nth-child(odd) {
     background-color: var(--side-bg-b)
-}
-.content th {
-    background-color: var(--side-bg-c);
 }
 .content table tr td a {
     padding-right: 1em;
@@ -166,8 +161,10 @@ body {
     max-width: 100%;
     display: block;
     margin: 0 auto;
-    border-style: solid;
-    border-radius: 10px;
-    border-width: 1px;
+    border-radius: 5px;
     border-color: var(--side-bg-a);
+}
+.content b {
+    padding-right: 0.5rem;
+    color: var(--main-bold);
 }

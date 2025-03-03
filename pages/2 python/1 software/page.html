@@ -18,24 +18,42 @@
 </ul>
 
 <h2>Python Distributions</h2>
+<ul>
+    <li><a target="_blank" href="https://docs.python.org/3/using/index.html">Python Setup and Usage Docs</a></li>
+    <li><a target="_blank" href="https://docs.python.org/3/using/windows.html">Windows Docs</a></li>
+    <li><a target="_blank" href="https://docs.python.org/3/using/unix.html">Unix Docs</a></li>
+    <li><a target="_blank" href="https://docs.python.org/3/using/mac.html">Mac Installer Docs</a></li>
+</ul>
 <p>
-    Some applications embed a Python interpreter within their source code, meaning you may not need to install Python separately on your machine.
-    Blender is a good example of an application that embeds a python interpreter into its build.
+    Some applications embed a Python interpreter within their source code (such as Blender), meaning you may not need to install Python separately on your machine.
     However, it's still a good idea to install Python separately, as your code editor will likely require it for IntelliSense and debugging.
 </p>
 <ul>
     <li><a target="_blank" href="https://www.python.org/downloads">Python Downloads Page</a></li>
 </ul>
+
+<h2>Windows Help</h2>
 <p>
     When installing python, make sure to enable "Add Python to PATH" option.
     This ensures the system paths will include python.
 </p>
-<img src="images/Windows Sys Var Editor.png" alt="Windows Sys Var Editor">
-
+<img src="https://docs.python.org/3/_images/win_installer.png" alt="Python Windows Installer">
 <p>
-    For Windows, you can check this by opening command prompt and typing python.
-    It should show start the interactive python interpreter within command prompt if succsessful.
+    You can check if your system recognizes python as a command.
+    Just open Command Prompt and type "python".
+    It should start the python interactive interpreter in the command prompt if working.
+    You can exit the python interpreter by typing quit(), returning you back to the command prompt.
     You can also type "echo %PATH%" into command prompt to see if python is in the system paths.
 </p>
 <img src="images/Windows Echo Sys Path for Python.png" alt="Windows Echo Sys Path for Python">
-
+<p>
+    On windows, you can open the System Properties and edit the Enviroment Variables manually if needed.
+    Just make sure to close command prompt or any terminals for the updates to take effect.
+    <b>NOTE</b> You want to add the python directory and the python/Scripts directory.
+    The Scripts sub directory includes the python PIP script which allows you to easily use pip install commands to install 3rd party modules.
+</p>
+<img src="images/Windows Sys Var Editor.png" alt="Windows Sys Var Editor">
+<p>
+    Here is a typical install directory for windows.
+</p>
+<img src="images/Windows Python Install Directory.png" alt="Windows Python Install Directory">
