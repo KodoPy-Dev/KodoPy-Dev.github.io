@@ -1,0 +1,238 @@
+
+<!-- Code : With Line Numbers -->      
+<pre class="line-numbers"><code class="language-python"># Examples
+x = 10
+y = 15
+z = 20
+# Plus Assign
+x += 5 # <-- Now x equals 15
+# Compare
+is_x_equal_to_y = x == y
+</code></pre>
+
+<h2>Operators</h2>
+<table>
+   <tr><th>Symbol</th> <th>Type</th>       <th>Description</th>                    <th>Example</th></tr>
+   <tr><td>+</td>      <td>Arithmetic</td> <td>Addition</td>                       <td>var = 5 + 5</td></tr>
+   <tr><td>-</td>      <td>Arithmetic</td> <td>Subtraction</td>                    <td>var = 5 - 5</td></tr>
+   <tr><td>*</td>      <td>Arithmetic</td> <td>Multiplication</td>                 <td>var = 5 * 5</td></tr>
+   <tr><td>/</td>      <td>Arithmetic</td> <td>Division</td>                       <td>var = 5 / 5</td></tr>
+   <tr><td>//</td>     <td>Arithmetic</td> <td>Floor Division</td>                 <td>var = 5 // 5</td></tr>
+   <tr><td>%</td>      <td>Arithmetic</td> <td>Modulus</td>                        <td>var = 5 % 2</td></tr>
+   <tr><td>**</td>     <td>Arithmetic</td> <td>Exponentiation</td>                 <td>var = 5**2</td></tr>
+   <tr><td>==</td>     <td>Comparison</td> <td>Equal to</td>                       <td>var = 10 == 10</td></tr>
+   <tr><td>!=</td>     <td>Comparison</td> <td>Not equal to</td>                   <td>var = 10 != 10</td></tr>
+   <tr><td>></td>      <td>Comparison</td> <td>Greater than</td>                   <td>var = 15 > 10</td></tr>
+   <tr><td><</td>      <td>Comparison</td> <td>Less than</td>                      <td>var = 15 < 10</td></tr>
+   <tr><td>>=</td>     <td>Comparison</td> <td>Greater than or equal to</td>       <td>var = 15 >= 10</td></tr>
+   <tr><td><=</td>     <td>Comparison</td> <td>Less than or equal to</td>          <td>var = 15 <= 10</td></tr>
+   <tr><td>and</td>    <td>Logical</td>    <td>Logical AND</td>                    <td>var = (2 > 0) and (2 > 1)</td></tr>
+   <tr><td>or</td>     <td>Logical</td>    <td>Logical OR</td>                     <td>var = (2 > 0) or (2 > 5)</td></tr>
+   <tr><td>not</td>    <td>Logical</td>    <td>Logical NOT</td>                    <td>var = not (5 > 1)</td></tr>
+   <tr><td>&</td>      <td>Bitwise</td>    <td>Bitwise AND</td>                    <td>var = 5 & 3</td></tr>
+   <tr><td>|</td>      <td>Bitwise</td>    <td>Bitwise OR</td>                     <td>var = 5 | 3</td></tr>
+   <tr><td>^</td>      <td>Bitwise</td>    <td>Bitwise XOR</td>                    <td>var = 5 ^ 3</td></tr>
+   <tr><td>~</td>      <td>Bitwise</td>    <td>Bitwise NOT</td>                    <td>var = 5 ~ 3</td></tr>
+   <tr><td><<</td>     <td>Bitwise</td>    <td>Left shift</td>                     <td>var = 5 << 3</td></tr>
+   <tr><td>>></td>     <td>Bitwise</td>    <td>Right shift</td>                    <td>var = 5 >> 3</td></tr>
+   <tr><td>=</td>      <td>Assignment</td> <td>Assign value</td>                   <td>var = 10</td></tr>
+   <tr><td>+=</td>     <td>Assignment</td> <td>Plus assign</td>                    <td>var += 1</td></tr>
+   <tr><td>-=</td>     <td>Assignment</td> <td>Minus assign</td>                   <td>var -= 1</td></tr>
+   <tr><td>*=</td>     <td>Assignment</td> <td>Multiply assign</td>                <td>var *= 2</td></tr>
+   <tr><td>/=</td>     <td>Assignment</td> <td>Divide assign</td>                  <td>var /= 2</td></tr>
+   <tr><td>//=</td>    <td>Assignment</td> <td>Floor divide assign</td>            <td>var /= 2</td></tr>
+   <tr><td>%=</td>     <td>Assignment</td> <td>Modulus assign</td>                 <td>var %= 2</td></tr>
+   <tr><td>**=</td>    <td>Assignment</td> <td>Exponentiation assign</td>          <td>var %= 2</td></tr>
+   <tr><td>&=</td>     <td>Assignment</td> <td>Bitwise AND and assign</td>         <td>var &= 2</td></tr>
+   <tr><td>|=</td>     <td>Assignment</td> <td>Bitwise OR and assign</td>          <td>var |= 2</td></tr>
+   <tr><td>^=</td>     <td>Assignment</td> <td>Bitwise XOR and assign</td>         <td>var ^= 2</td></tr>
+   <tr><td><<=</td>    <td>Assignment</td> <td>Left shift and assign</td>          <td>var <<= 2</td></tr>
+   <tr><td>>>=</td>    <td>Assignment</td> <td>Right shift and assign</td>         <td>var >>= 2</td></tr>
+   <tr><td>is</td>     <td>Identity</td>   <td>Compare objects by ID</td>          <td>var = x is y</td></tr>
+   <tr><td>is not</td> <td>Identity</td>   <td>Compare objects by ID & Negate</td> <td>var = x is not y</td></tr>
+   <tr><td>in</td>     <td>Membership</td> <td>Check if x is in iterable</td>      <td>var = x in y</td></tr>
+   <tr><td>not in</td> <td>Membership</td> <td>Check if x is NOT in iterable</td>  <td>var = x not in y</td></tr>
+</table>
+
+<h2>Functions</h2>
+<table>
+    <tr><th>Name</th>       <th>Description</th></tr>
+    <tr><td>print</td>      <td>Outputs text or variables to the console</td></tr>
+    <tr><td>input</td>      <td>Reads user input from the console</td></tr>
+    <tr><td>len</td>        <td>Returns the length of an iterable (e.g., list, string)</td></tr>
+    <tr><td>type</td>       <td>Returns the type of an object</td></tr>
+    <tr><td>int</td>        <td>Converts values to integers</td></tr>
+    <tr><td>float</td>      <td>Converts values to floats</td></tr>
+    <tr><td>str</td>        <td>Converts values to strings</td></tr>
+    <tr><td>round</td>      <td>Rounds a number to a given precision</td></tr>
+    <tr><td>abs</td>        <td>Returns the absolute value of a number</td></tr>
+    <tr><td>min</td>        <td>Returns the minimum value from an iterable</td></tr>
+    <tr><td>max</td>        <td>Returns the maximum value from an iterable</td></tr>
+    <tr><td>sum</td>        <td>Returns the sum of a sequence of numbers</td></tr>
+    <tr><td>all</td>        <td>Returns True if all elements in an iterable are truthy</td></tr>
+    <tr><td>range</td>      <td>Generates a sequence of numbers</td></tr>
+    <tr><td>enumerate</td>  <td>Returns an iterable with index-value pairs</td></tr>
+    <tr><td>zip</td>        <td>Combines multiple iterables element-wise</td></tr>
+    <tr><td>map</td>        <td>Applies a function to each item in an iterable</td></tr>
+    <tr><td>filter</td>     <td>Filters elements of an iterable based on a condition</td></tr>
+    <tr><td>sorted</td>     <td>Returns a sorted list from an iterable</td></tr>
+    <tr><td>reversed</td>   <td>Returns a reversed iterator</td></tr>
+    <tr><td>isinstance</td> <td>Checks if an object is an instance of a specific type</td></tr>
+    <tr><td>id</td>         <td>Returns the memory address of an object</td></tr>
+    <tr><td>hash</td>       <td>Returns a hash value for hashable objects</td></tr>
+    <tr><td>open</td>       <td>Opens a file for reading/writing</td></tr>
+    <tr><td>eval</td>       <td>Evaluates a string as Python code (use with caution)</td></tr>
+    <tr><td>exec</td>       <td>Executes a block of code</td></tr>
+    <tr><td>dir</td>        <td>Lists attributes and methods of an object</td></tr>
+    <tr><td>help</td>       <td>Displays documentation for an object</td></tr>
+    <tr><td>locals</td>     <td>Returns local symbol tables as a dictionary</td></tr>
+    <tr><td>globals</td>    <td>Returns global symbol tables as a dictionary</td></tr>
+    <tr><td>hasattr</td>    <td>Checks if an object has a given attribute</td></tr>
+    <tr><td>setattr</td>    <td>Sets an attribute on an object</td></tr>
+</table>
+
+
+
+
+
+
+<h2>Common Builtin Data Type Constructors</h2>
+<ul>
+    <li>list() - Creates a new list (e.g., list([1, 2, 3]) → [1, 2, 3])</li>
+    <li>set() - Creates a new set, removing duplicates (e.g., set([1, 2, 2, 3]) → {1, 2, 3})</li>
+    <li>dict() - Creates a new dictionary (e.g., dict(a=1, b=2) → {'a': 1, 'b': 2})</li>
+    <li>tuple() - Creates a new tuple (e.g., tuple([1, 2, 3]) → (1, 2, 3))</li>
+    <li>str() - Converts an object to a string (e.g., str(123) → "123")</li>
+    <li>int() - Converts a number or string to an integer (e.g., int("42") → 42)</li>
+    <li>float() - Converts a number or string to a floating-point number (e.g., float("3.14") → 3.14)</li>
+    <li>bool() - Converts an object to True or False (e.g., bool(0) → False)</li>
+    <li>bytes() - Creates a bytes object (e.g., bytes("hello", "utf-8"))</li>
+    <li>bytearray() - Creates a mutable byte array (e.g., bytearray(5))</li>
+    <li>complex() - Creates a complex number (e.g., complex(1, 2) → 1+2j)</li>
+    <li>frozenset() - Creates an immutable set (e.g., frozenset([1, 2, 3]))</li>
+</ul>
+
+<h2>Comprehension Constructors</h2>
+<ul>
+    <li>list - [i for i in range(10)]         → [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</li>
+    <li>set - {i for i in range(10)}          → {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}</li>
+    <li>dict - {i : i**2 for i in range(4)}   → {0: 0, 1: 1, 2: 4, 3: 9}</li>
+    <li>tuple - (i for i in range(10))        → (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)</li>
+</ul>
+
+
+
+
+
+<h2>Operating System & System Information</h2>
+<ul>
+    <li><a href="">os</a>Interacts with the operating system (e.g., file management)</li>
+    <li><a href="">sys</a>Provides system-specific parameters and functions</li>
+    <li><a href="">platform</a>Retrieves system information (OS, version, etc.)</li>
+    <li><a href="">shutil</a>High-level file operations (copy, move, delete)</li>
+    <li><a href="">subprocess</a>Executes system commands and processes</li>
+    <li><a href="">signal</a>Handles system signals and interruptions</li>
+</ul>
+
+<h2>File Handling & Serialization</h2>
+<ul>
+    <li><a href="">io</a>Provides core tools for working with streams</li>
+    <li><a href="">pathlib</a>Object-oriented file system paths</li>
+    <li><a href="">os.path</a>Functions for file paths and directory handling</li>
+    <li><a href="">glob</a>Finds files matching a pattern</li>
+    <li><a href="">shutil</a>File and directory operations</li>
+    <li><a href="">pickle</a>Serializes and deserializes Python objects</li>
+    <li><a href="">json</a>Reads and writes JSON data</li>
+    <li><a href="">csv</a>Reads and writes CSV files</li>
+    <li><a href="">configparser</a>Parses INI configuration files</li>
+</ul>
+
+<h2>Networking & Internet</h2>
+<ul>
+    <li><a href="">socket</a>Low-level networking interface</li>
+    <li><a href="">http.server</a>Simple HTTP server</li>
+    <li><a href="">urllib</a>Fetches data from URLs</li>
+    <li><a href="">json</a>Handles JSON data, commonly used in APIs</li>
+</ul>
+
+<h2>Data Structures & Algorithms</h2>
+<ul>
+    <li><a href="">collections</a>Provides specialized data structures (e.g., deque, Counter)</li>
+    <li><a href="">heapq</a>Implements a priority queue (heap)</li>
+    <li><a href="">bisect</a>Functions for binary search operations</li>
+    <li><a href="">array</a>Creates space-efficient arrays</li>
+    <li><a href="">queue</a>Implements FIFO and LIFO queues</li>
+</ul>
+
+<h2>Mathematics & Statistics</h2>
+<ul>
+    <li><a href="">math</a>Basic math functions (e.g., sqrt(), log())</li>
+    <li><a href="">cmath</a>Complex number mathematics</li>
+    <li><a href="">random</a>Generates random numbers</li>
+    <li><a href="">statistics</a>Computes basic statistics (mean, median, mode)</li>
+    <li><a href="">decimal</a>High-precision floating-point arithmetic</li>
+    <li><a href="">fractions</a>Handles fractions and rational numbers</li>
+</ul>
+
+<h2>Date & Time</h2>
+<ul>
+    <li><a href="">time</a>Provides time-related functions (e.g., sleep, timestamps)</li>
+    <li><a href="">datetime</a>Manipulates dates and times</li>
+    <li><a href="">calendar</a>Works with calendars and date calculations</li>
+</ul>
+
+<h2>Multithreading & Concurrency</h2>
+<ul>
+    <li><a href="">threading</a>Supports multithreading</li>
+    <li><a href="">multiprocessing</a>Runs code across multiple CPU cores</li>
+    <li><a href="">concurrent.futures</a>Higher-level parallel execution tools</li>
+    <li><a href="">asyncio</a>Asynchronous programming framework</li>
+</ul>
+
+<h2>Regular Expressions & Text Processing</h2>
+<ul>
+    <li><a href="">re</a>Regular expression (regex) handling</li>
+    <li><a href="">string</a>String manipulation tools and templates</li>
+    <li><a href="">textwrap</a>Formats text for output</li>
+    <li><a href="">difflib</a>Compares sequences (e.g., file diffs)</li>
+</ul>
+
+<h2>Cryptography & Hashing</h2>
+<ul>
+    <li><a href="">hashlib</a>Secure hash algorithms (SHA, MD5)</li>
+    <li><a href="">hmac</a>Cryptographic message authentication</li>
+    <li><a href="">secrets</a>Secure random number generation for cryptography</li>
+</ul>
+
+<h2>Debugging, Logging & Profiling</h2>
+<ul>
+    <li><a href="">logging</a>Logs messages for debugging and tracking</li>
+    <li><a href="">traceback</a>Extracts, formats, and prints stack traces</li>
+    <li><a href="">pdb</a>The Python debugger</li>
+    <li><a href="">timeit</a>Measures execution time of code snippets</li>
+    <li><a href="">profile</a>Profiles performance of Python programs</li>
+</ul>
+
+<h2>Unit Testing & Code Quality</h2>
+<ul>
+    <li><a href="">unittest</a>Built-in unit testing framework</li>
+    <li><a href="">doctest</a>Tests embedded in documentation</li>
+</ul>
+
+<h2>GUI (Graphical User Interface)</h2>
+<ul>
+    <li><a href="">tkinter</a>Standard Python GUI toolkit</li>
+</ul>
+
+<h2>Miscellaneous</h2>
+<ul>
+    <li><a href="">functools</a>Functional programming tools (lru_cache, partial)</li>
+    <li><a href="">itertools</a>Iterators and combinatorial functions.</li>
+    <li><a href="">operator</a>Functions for efficient attribute/item access.</li>
+    <li><a href="">enum</a>Defines enumerations.</li>
+    <li><a href="">typing</a>Type hinting for Python programs.</li>
+    <li><a href="">dataclasses</a>Creates lightweight, mutable classes.</li>
+</ul>
+
+
+

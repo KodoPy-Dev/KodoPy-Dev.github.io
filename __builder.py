@@ -234,11 +234,11 @@ def build():
     # Write
     for page in all_pages:
 
-        # header = ""
-        # if page.parent_names:
-        #     header = f'<h1>{" » ".join(page.parent_names)} » {page.page_title}</h1>'
-        # else:
-        #     header = f'<h1>{page.page_title}</h1>'
+        header = ""
+        if page.parent_names:
+            header = f'<h1>{" » ".join(page.parent_names)} » {page.page_title}</h1>'
+        else:
+            header = f'<h1>{page.page_title}</h1>'
 
         content = [
             '<!DOCTYPE html>',
@@ -257,7 +257,7 @@ def build():
             *nav_items,
             '\t\t<div class="content">',
             '\n<!--------------------------------------------- PAGE --------------------------------------------->',
-            # header,
+            header,
             page.page_content,
             '\n<!--------------------------------------------- FOOTER --------------------------------------------->',
             '\t\t</div>',

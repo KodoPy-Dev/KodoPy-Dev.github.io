@@ -7,6 +7,8 @@ Left to Right Layout (PIXELS)
 *------------------------------------------*
 */
 
+/* padding : Top, Right, Bottom, Left */
+
 /* -------------------- VARIABLES -------------------- */
 
 :root {
@@ -17,7 +19,6 @@ Left to Right Layout (PIXELS)
     --body-font-color: #e0e0e0;
 
     --side-width: 200px;
-    --side-bar-height: 100%;
     --side-bg-a: #1f1f1f;
     --side-bg-b: #1a1a1a;
     --side-bg-c: #0f0f0f;
@@ -32,6 +33,7 @@ Left to Right Layout (PIXELS)
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    color: var(--body-font-color);
 }
 body {
     margin: 0;
@@ -39,11 +41,12 @@ body {
     background-color: var(--body-bg);
     color: var(--body-font-color);
 }
+
 /* -------------------- NAVIGATION -------------------- */
 
 .sidebar {
     width: var(--side-width);
-    height: var(--side-height);
+    height: 100%;
     position: fixed;
     overflow-x: hidden;
     z-index: 1;
@@ -97,15 +100,15 @@ body {
     margin-left: calc(var(--side-width) + 20px);
     margin-right: 20px;
     margin-top: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    margin-bottom: 20px;
+    padding: 5px 10px 5px 10px;
     background-color: var(--main-bg);
     border-radius: 8px;
 }
 .content h1, h2, h3, h4, h5, h6 {
     padding: 5px;
-    padding-left: 10px;
-    margin: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     font-size: 1.25em;
     font-weight: bold;
     border-radius: 5px;
@@ -114,18 +117,35 @@ body {
     color: var(--main-h);
 }
 .content p {
-    padding: 5px;
     padding-left: 15px;
 }
 .content ul {
-    padding-left: 45px;
+    margin-left: 2.5em;
 }
 .content ul li {
-    padding: 2px;
-    list-style-type: circle;
+    list-style-type: disc;
 }
 .content ul li a {
     padding-right: 1em;
     color: var(--kodopy-green);
     text-decoration: none;
+}
+.content table {
+    padding: 5px;
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5px;
+}
+.content th, td {
+    text-align: left;
+    padding: 6px;
+}
+.content tr:nth-child(even) {
+    background-color: var(--side-bg-a)
+}
+.content tr:nth-child(odd) {
+    background-color: var(--side-bg-b)
+}
+.content th {
+    background-color: var(--side-bg-c);
 }
