@@ -17,7 +17,7 @@
 			<a href="index.html">Home</a>
 			<a href="python.html">Python</a>
 			<ul>
-				<li><a href="python_introduction.html">Introduction</a></li>
+				<li><a href="python_software.html">Software</a></li>
 				<li><a href="python_cheat_sheet.html">Cheat Sheet</a></li>
 			</ul>
 			<a href="blender.html">Blender</a>
@@ -29,6 +29,9 @@
 
 <!--------------------------------------------- PAGE --------------------------------------------->
 <h2>Builtin Operators</h2>
+<p>
+    <a target="_blank" href="https://docs.python.org/3/library/stdtypes.html#built-in-types">All Value Testing</a>
+</p>
 <table>
    <tr><th>Symbol</th> <th>Type</th>       <th>Description</th>                    <th>Example</th></tr>
    <tr><td>+</td>      <td>Arithmetic</td> <td>Addition</td>                       <td>var = 5 + 5</td></tr>
@@ -72,7 +75,7 @@
    <tr><td>not in</td> <td>Membership</td> <td>Check if x is NOT in iterable</td>  <td>var = x not in y</td></tr>
 </table>
 
-<pre class="line-numbers"><code class="language-python"># Arithmetic
+<pre class="line-numbers"><code class="language-python">''' Arithmetic '''
 x = 10
 y = 2
 result = x + y  # ← 12
@@ -82,8 +85,26 @@ result = x / y  # ← 5
 result = x // y # ← 5
 result = x %  y # ← 0
 result = x ** y # ← 100
+</code></pre>
 
-# Identity : using 'id()'
+<pre class="line-numbers"><code class="language-python">''' Comparison '''
+x = 10
+y = 2
+if x > y:
+    print("X is greater than Y")
+if x == y:
+    print("X is equal to Y")
+</code></pre>
+
+<pre class="line-numbers"><code class="language-python">''' Logical '''
+x = 10
+y = 2
+if x > y and y > 0:
+    print("X is greater than Y and Y is greater than 0")
+</code></pre>
+
+<pre class="line-numbers"><code class="language-python">''' Identity '''
+# Using id
 a = 10
 b = 12
 result = id(a) == id(b) # ← False : The value types don't point to the same value
@@ -93,13 +114,13 @@ result = id(a) == id(b) # ← True : The value types point to the same value
 a = [1, 2, 3]
 b = [1, 2, 3]
 result = id(a) == id(b) # ← False : Two different reference types will not have the same id
-
-# Identity : Using 'is'
+# Using is
 a = 10
 b = 12
 result = a is b # ← False : The value types don't point to the same value
+</code></pre>
 
-# Membership
+<pre class="line-numbers"><code class="language-python">''' Membership '''
 a = [1, 2, 3, 4]
 b = 3
 result = b in a     # ← True  : Since b is equal to 3 and 3 is in the list a
@@ -107,6 +128,9 @@ result = b not in a # ← False : Since b does occur in list a
 </code></pre>
 
 <h2>Builtin Functions</h2>
+<p>
+    <a target="_blank" href="https://docs.python.org/3/library/functions.html">All Builtin Functions</a>
+</p>
 <table>
     <tr><th>Name</th>       <th>Description</th></tr>
     <tr><td>print</td>      <td>Outputs text or variables to the console</td></tr>
@@ -141,7 +165,25 @@ result = b not in a # ← False : Since b does occur in list a
     <tr><td>globals</td>    <td>Returns global symbol tables as a dictionary</td></tr>
     <tr><td>hasattr</td>    <td>Checks if an object has a given attribute</td></tr>
     <tr><td>setattr</td>    <td>Sets an attribute on an object</td></tr>
+    <tr><td>getattr</td>    <td>Returns the data stored on an object by attribute lookup</td></tr>
 </table>
+
+<pre class="line-numbers"><code class="language-python">''' Casting '''
+# Cast string to int
+a = "10"
+b = None
+if a.isdigit():
+    b = int(a)
+
+# Cast string to float
+def to_float(value, fallback=None):
+    try: return float(value)
+    except: pass
+    return fallback
+
+a = "10.5416"
+b = to_float(value=a, fallback=None)
+</code></pre>
 
 <h2>Common Builtin Data Type Constructors</h2>
 <table>
@@ -169,7 +211,10 @@ result = b not in a # ← False : Since b does occur in list a
     <tr><td>tuple</td> <td>(i for i in range(10))</td>       <td>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)</td></tr>
 </table>
 
-<h2>Common Builtin Modules</h2>
+<h2>Builtin Modules</h2>
+<p>
+    <a target="_blank" href="https://docs.python.org/3/library/index.html">All Builtin Modules</a>
+</p>
 <table>
     <tr><th>Name</th>                                                                                                 <th>Category</th>             <th>Description</th></tr>
     <tr><td><a target="_blank" href="https://docs.python.org/3/library/numbers.html">numbers</a></td>                 <td>Numeric</td>              <td>Numeric abstract base classes</td></tr>

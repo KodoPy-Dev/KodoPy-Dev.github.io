@@ -27,7 +27,7 @@ Left to Right Layout (PIXELS)
     --main-h: #ff7e14;
 }
 
-/* -------------------- GLOBAL -------------------- */
+/* -------------------- GLOBAL SELECTORS -------------------- */
 
 * {
     margin: 0px;
@@ -41,7 +41,8 @@ body {
     background-color: var(--body-bg);
     color: var(--body-font-color);
 }
-/* -------------------- NAVIGATION -------------------- */
+
+/* -------------------- SIDE BAR SELECTORS -------------------- */
 
 .sidebar {
     width: var(--side-width);
@@ -93,19 +94,20 @@ body {
     background-color: var(--side-bg-b);
 }
 
-/* -------------------- BODY -------------------- */
+/* -------------------- CONTENT SELECTORS -------------------- */
 
 .content {
     margin-left: calc(var(--side-width) + 20px);
     margin-right: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
-    padding: 5px 10px 5px 10px;
+    padding: 10px;
     background-color: var(--main-bg);
     border-radius: 8px;
 }
 .content h1, h2, h3, h4, h5, h6 {
     padding: 5px;
+    padding-left: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
     font-size: 1.25em;
@@ -116,15 +118,22 @@ body {
     color: var(--main-h);
 }
 .content p {
-    padding-left: 15px;
+    padding: 10px;
 }
-.content ul {
+.content p a {
+    color: var(--kodopy-green);
+    text-decoration: None;
+}
+.content ul, ol {
     margin-left: 2.5em;
 }
 .content ul li {
     list-style-type: disc;
 }
-.content ul li a {
+.content ol li {
+    padding-left: 5px;
+}
+.content ul li a, ol li a {
     padding-right: 1em;
     color: var(--kodopy-green);
     text-decoration: none;
@@ -152,4 +161,13 @@ body {
     padding-right: 1em;
     color: var(--kodopy-green);
     text-decoration: none;
+}
+.content img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: var(--side-bg-a);
 }
