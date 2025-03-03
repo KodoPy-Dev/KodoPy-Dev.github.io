@@ -1,16 +1,4 @@
-
-<!-- Code : With Line Numbers -->      
-<pre class="line-numbers"><code class="language-python"># Examples
-x = 10
-y = 15
-z = 20
-# Plus Assign
-x += 5 # <-- Now x equals 15
-# Compare
-is_x_equal_to_y = x == y
-</code></pre>
-
-<h2>Operators</h2>
+<h2>Builtin Operators</h2>
 <table>
    <tr><th>Symbol</th> <th>Type</th>       <th>Description</th>                    <th>Example</th></tr>
    <tr><td>+</td>      <td>Arithmetic</td> <td>Addition</td>                       <td>var = 5 + 5</td></tr>
@@ -54,7 +42,41 @@ is_x_equal_to_y = x == y
    <tr><td>not in</td> <td>Membership</td> <td>Check if x is NOT in iterable</td>  <td>var = x not in y</td></tr>
 </table>
 
-<h2>Functions</h2>
+<pre class="line-numbers"><code class="language-python"># Arithmetic
+x = 10
+y = 2
+result = x + y  # ← 12
+result = x - y  # ← 8
+result = x * y  # ← 20
+result = x / y  # ← 5
+result = x // y # ← 5
+result = x %  y # ← 0
+result = x ** y # ← 100
+
+# Identity : using 'id()'
+a = 10
+b = 12
+result = id(a) == id(b) # ← False : The value types don't point to the same value
+a = 10
+b = 10
+result = id(a) == id(b) # ← True : The value types point to the same value
+a = [1, 2, 3]
+b = [1, 2, 3]
+result = id(a) == id(b) # ← False : Two different reference types will not have the same id
+
+# Identity : Using 'is'
+a = 10
+b = 12
+result = a is b # ← False : The value types don't point to the same value
+
+# Membership
+a = [1, 2, 3, 4]
+b = 3
+result = b in a     # ← True  : Since b is equal to 3 and 3 is in the list a
+result = b not in a # ← False : Since b does occur in list a
+</code></pre>
+
+<h2>Builtin Functions</h2>
 <table>
     <tr><th>Name</th>       <th>Description</th></tr>
     <tr><td>print</td>      <td>Outputs text or variables to the console</td></tr>
@@ -91,148 +113,77 @@ is_x_equal_to_y = x == y
     <tr><td>setattr</td>    <td>Sets an attribute on an object</td></tr>
 </table>
 
-
-
-
-
-
 <h2>Common Builtin Data Type Constructors</h2>
-<ul>
-    <li>list() - Creates a new list (e.g., list([1, 2, 3]) → [1, 2, 3])</li>
-    <li>set() - Creates a new set, removing duplicates (e.g., set([1, 2, 2, 3]) → {1, 2, 3})</li>
-    <li>dict() - Creates a new dictionary (e.g., dict(a=1, b=2) → {'a': 1, 'b': 2})</li>
-    <li>tuple() - Creates a new tuple (e.g., tuple([1, 2, 3]) → (1, 2, 3))</li>
-    <li>str() - Converts an object to a string (e.g., str(123) → "123")</li>
-    <li>int() - Converts a number or string to an integer (e.g., int("42") → 42)</li>
-    <li>float() - Converts a number or string to a floating-point number (e.g., float("3.14") → 3.14)</li>
-    <li>bool() - Converts an object to True or False (e.g., bool(0) → False)</li>
-    <li>bytes() - Creates a bytes object (e.g., bytes("hello", "utf-8"))</li>
-    <li>bytearray() - Creates a mutable byte array (e.g., bytearray(5))</li>
-    <li>complex() - Creates a complex number (e.g., complex(1, 2) → 1+2j)</li>
-    <li>frozenset() - Creates an immutable set (e.g., frozenset([1, 2, 3]))</li>
-</ul>
+<table>
+    <tr><th>Name</th>      <th>Mutable</th> <th>Description</th>                                           <th>Initialize</th></tr>
+    <tr><td>list</td>      <td>Yes</td>     <td>Create an ordered sequence</td>                            <td>list([1, 2, 3])</td></tr>
+    <tr><td>set</td>       <td>Yes</td>     <td>Create an unordered collection of unique elements</td>     <td>set([1, 2, 2])</td></tr>
+    <tr><td>dict</td>      <td>Yes</td>     <td>Create a collection of key-value pairs</td>                <td>dict(a=1, b=2)</td></tr>
+    <tr><td>tuple</td>     <td>No</td>      <td>Create an immutable ordered sequence</td>                  <td>tuple([1, 2, 3])</td></tr>
+    <tr><td>str</td>       <td>No</td>      <td>Create an immutable text string</td>                       <td>str(123)</td></tr>
+    <tr><td>int</td>       <td>No</td>      <td>Convert a number or string to an integer</td>              <td>int("42")</td></tr>
+    <tr><td>float</td>     <td>No</td>      <td>Convert a number or string to a floating-point number</td> <td>float("3.14")</td></tr>
+    <tr><td>bool</td>      <td>No</td>      <td>Convert an object to a boolean value</td>                  <td>bool(0)</td></tr>
+    <tr><td>bytes</td>     <td>No</td>      <td>Create an immutable sequence of bytes</td>                 <td>bytes("hello", "utf-8")</td></tr>
+    <tr><td>bytearray</td> <td>Yes</td>     <td>Create a mutable sequence of bytes</td>                    <td>bytearray(5)</td></tr>
+    <tr><td>complex</td>   <td>No</td>      <td>Create a complex number with real and imaginary parts</td> <td>complex(1, 2)</td></tr>
+    <tr><td>frozenset</td> <td>No</td>      <td>Create an immutable set of unique elements</td>            <td>frozenset([1, 2, 3])</td></tr>
+</table>
 
 <h2>Comprehension Constructors</h2>
-<ul>
-    <li>list - [i for i in range(10)]         → [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</li>
-    <li>set - {i for i in range(10)}          → {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}</li>
-    <li>dict - {i : i**2 for i in range(4)}   → {0: 0, 1: 1, 2: 4, 3: 9}</li>
-    <li>tuple - (i for i in range(10))        → (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)</li>
-</ul>
+<table>
+    <tr><th>Name</th>  <th>Example</th>                      <th>Result</th></tr>
+    <tr><td>list</td>  <td>[i for i in range(10)]</td>       <td>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</td></tr>
+    <tr><td>set</td>   <td>{i for i in range(10)}</td>       <td>{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}</td></tr>
+    <tr><td>dict</td>  <td>{i : i**2 for i in range(4)}</td> <td>{0: 0, 1: 1, 2: 4, 3: 9}</td></tr>
+    <tr><td>tuple</td> <td>(i for i in range(10))</td>       <td>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)</td></tr>
+</table>
+
+<h2>Common Builtin Modules</h2>
+<table>
+    <tr><th>Name</th>                                                                                                 <th>Category</th>             <th>Description</th></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/numbers.html">numbers</a></td>                 <td>Numeric</td>              <td>Numeric abstract base classes</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/math.html">math</a></td>                       <td>Numeric</td>              <td>Mathematical functions</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/cmath.html">cmath</a></td>                     <td>Numeric</td>              <td>Mathematical functions for complex numbers</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/decimal.html">decimal</a></td>                 <td>Numeric</td>              <td>Decimal fixed-point and floating-point arithmetic</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/fractions.html">fractions</a></td>             <td>Numeric</td>              <td>Rational numbers</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/random.html">random</a></td>                   <td>Numeric</td>              <td>Generate pseudo-random numbers</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/statistics.html">statistics</a></td>           <td>Numeric</td>              <td>Mathematical statistics functions</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/itertools.html">itertools</a></td>             <td>Functional</td>           <td>Functions creating iterators for efficient looping</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/functools.html">functools</a></td>             <td>Functional</td>           <td>Higher-order functions and operations on callable objects</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/operator.html">operator</a></td>               <td>Functional</td>           <td>Standard operators as functions</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/datetime.html">datetime</a></td>               <td>Data Types</td>           <td>Basic date and time types</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/collections.html">collections</a></td>         <td>Data Types</td>           <td>Container datatypes (namedtuple, deque, ChainMap, Counter, OrderedDict, defaultdict, UserDict, UserList, UserString)</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/heapq.html">heapq</a></td>                     <td>Data Types</td>           <td>Heap queue algorithm</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/array.html">array</a></td>                     <td>Data Types</td>           <td>Efficient arrays of numeric values</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/weakref.html">weakref</a></td>                 <td>Data Types</td>           <td>Create weak references to objects</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/types.html">types</a></td>                     <td>Data Types</td>           <td>Dynamic type creation and names for built-in types</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/copy.html">copy</a></td>                       <td>Data Types</td>           <td>Shallow and deep copy operations</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/enum.html">enum</a></td>                       <td>Data Types</td>           <td>Support for enumerations</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/re.html">re</a></td>                           <td>Text Processing</td>      <td>Provides regular expression matching operations similar to those found in Perl</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/string.html">string</a></td>                   <td>Text Processing</td>      <td>Common string operations</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/os.html">os</a></td>                           <td>Operating System</td>     <td>Miscellaneous operating system interfaces</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/sys.html">sys</a></td>                         <td>Operating System</td>     <td>System-specific parameters and functions</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/platform.html">platform</a></td>               <td>Operating System</td>     <td>Access to underlying platform's identifying data</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/subprocess.html">subprocess</a></td>           <td>Concurrent Execution</td> <td>Executes system commands and processes</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/threading.html">threading</a></td>             <td>Concurrent Execution</td> <td>Higher-level threading interfaces on top of the lower level _thread module</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/multiprocessing.html">multiprocessing</a></td> <td>Concurrent Execution</td> <td>Package that supports spawning processes</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/queue.html">queue</a></td>                     <td>Concurrent Execution</td> <td>Implements multi-producer, multi-consumer queues</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/contextvars.html">contextvars</a></td>         <td>Concurrent Execution</td> <td>APIs to manage, store, and access context-local state</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/pathlib.html">pathlib</a></td>                 <td>File and Directory</td>   <td>Object-oriented filesystem paths</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/shutil.html">shutil</a></td>                   <td>File and Directory</td>   <td>High-level file operations</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/os.path.html">os.path</a></td>                 <td>File and Directory</td>   <td>Common pathname manipulations</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/glob.html">glob</a></td>                       <td>File and Directory</td>   <td>Unix style pathname pattern expansion</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/stat.html">stat</a></td>                       <td>File and Directory</td>   <td>Interpreting stat() results</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/filecmp.html">filecmp</a></td>                 <td>File and Directory</td>   <td>File and Directory Comparisons</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/tempfile.html">tempfile</a></td>               <td>File and Directory</td>   <td>Generate temporary files and directories</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/fnmatch.html">fnmatch</a></td>                 <td>File and Directory</td>   <td>Unix filename pattern matching</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/linecache.html">linecache</a></td>             <td>File and Directory</td>   <td>Random access to text lines</td></tr>
+
+</table>
 
 
 
-
-
-<h2>Operating System & System Information</h2>
-<ul>
-    <li><a href="">os</a>Interacts with the operating system (e.g., file management)</li>
-    <li><a href="">sys</a>Provides system-specific parameters and functions</li>
-    <li><a href="">platform</a>Retrieves system information (OS, version, etc.)</li>
-    <li><a href="">shutil</a>High-level file operations (copy, move, delete)</li>
-    <li><a href="">subprocess</a>Executes system commands and processes</li>
-    <li><a href="">signal</a>Handles system signals and interruptions</li>
-</ul>
-
-<h2>File Handling & Serialization</h2>
-<ul>
-    <li><a href="">io</a>Provides core tools for working with streams</li>
-    <li><a href="">pathlib</a>Object-oriented file system paths</li>
-    <li><a href="">os.path</a>Functions for file paths and directory handling</li>
-    <li><a href="">glob</a>Finds files matching a pattern</li>
-    <li><a href="">shutil</a>File and directory operations</li>
-    <li><a href="">pickle</a>Serializes and deserializes Python objects</li>
-    <li><a href="">json</a>Reads and writes JSON data</li>
-    <li><a href="">csv</a>Reads and writes CSV files</li>
-    <li><a href="">configparser</a>Parses INI configuration files</li>
-</ul>
-
-<h2>Networking & Internet</h2>
-<ul>
-    <li><a href="">socket</a>Low-level networking interface</li>
-    <li><a href="">http.server</a>Simple HTTP server</li>
-    <li><a href="">urllib</a>Fetches data from URLs</li>
-    <li><a href="">json</a>Handles JSON data, commonly used in APIs</li>
-</ul>
-
-<h2>Data Structures & Algorithms</h2>
-<ul>
-    <li><a href="">collections</a>Provides specialized data structures (e.g., deque, Counter)</li>
-    <li><a href="">heapq</a>Implements a priority queue (heap)</li>
-    <li><a href="">bisect</a>Functions for binary search operations</li>
-    <li><a href="">array</a>Creates space-efficient arrays</li>
-    <li><a href="">queue</a>Implements FIFO and LIFO queues</li>
-</ul>
-
-<h2>Mathematics & Statistics</h2>
-<ul>
-    <li><a href="">math</a>Basic math functions (e.g., sqrt(), log())</li>
-    <li><a href="">cmath</a>Complex number mathematics</li>
-    <li><a href="">random</a>Generates random numbers</li>
-    <li><a href="">statistics</a>Computes basic statistics (mean, median, mode)</li>
-    <li><a href="">decimal</a>High-precision floating-point arithmetic</li>
-    <li><a href="">fractions</a>Handles fractions and rational numbers</li>
-</ul>
-
-<h2>Date & Time</h2>
-<ul>
-    <li><a href="">time</a>Provides time-related functions (e.g., sleep, timestamps)</li>
-    <li><a href="">datetime</a>Manipulates dates and times</li>
-    <li><a href="">calendar</a>Works with calendars and date calculations</li>
-</ul>
-
-<h2>Multithreading & Concurrency</h2>
-<ul>
-    <li><a href="">threading</a>Supports multithreading</li>
-    <li><a href="">multiprocessing</a>Runs code across multiple CPU cores</li>
-    <li><a href="">concurrent.futures</a>Higher-level parallel execution tools</li>
-    <li><a href="">asyncio</a>Asynchronous programming framework</li>
-</ul>
-
-<h2>Regular Expressions & Text Processing</h2>
-<ul>
-    <li><a href="">re</a>Regular expression (regex) handling</li>
-    <li><a href="">string</a>String manipulation tools and templates</li>
-    <li><a href="">textwrap</a>Formats text for output</li>
-    <li><a href="">difflib</a>Compares sequences (e.g., file diffs)</li>
-</ul>
-
-<h2>Cryptography & Hashing</h2>
-<ul>
-    <li><a href="">hashlib</a>Secure hash algorithms (SHA, MD5)</li>
-    <li><a href="">hmac</a>Cryptographic message authentication</li>
-    <li><a href="">secrets</a>Secure random number generation for cryptography</li>
-</ul>
-
-<h2>Debugging, Logging & Profiling</h2>
-<ul>
-    <li><a href="">logging</a>Logs messages for debugging and tracking</li>
-    <li><a href="">traceback</a>Extracts, formats, and prints stack traces</li>
-    <li><a href="">pdb</a>The Python debugger</li>
-    <li><a href="">timeit</a>Measures execution time of code snippets</li>
-    <li><a href="">profile</a>Profiles performance of Python programs</li>
-</ul>
-
-<h2>Unit Testing & Code Quality</h2>
-<ul>
-    <li><a href="">unittest</a>Built-in unit testing framework</li>
-    <li><a href="">doctest</a>Tests embedded in documentation</li>
-</ul>
-
-<h2>GUI (Graphical User Interface)</h2>
-<ul>
-    <li><a href="">tkinter</a>Standard Python GUI toolkit</li>
-</ul>
-
-<h2>Miscellaneous</h2>
-<ul>
-    <li><a href="">functools</a>Functional programming tools (lru_cache, partial)</li>
-    <li><a href="">itertools</a>Iterators and combinatorial functions.</li>
-    <li><a href="">operator</a>Functions for efficient attribute/item access.</li>
-    <li><a href="">enum</a>Defines enumerations.</li>
-    <li><a href="">typing</a>Type hinting for Python programs.</li>
-    <li><a href="">dataclasses</a>Creates lightweight, mutable classes.</li>
-</ul>
 
 
 

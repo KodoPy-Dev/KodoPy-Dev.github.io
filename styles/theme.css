@@ -41,7 +41,6 @@ body {
     background-color: var(--body-bg);
     color: var(--body-font-color);
 }
-
 /* -------------------- NAVIGATION -------------------- */
 
 .sidebar {
@@ -148,4 +147,9 @@ body {
 }
 .content th {
     background-color: var(--side-bg-c);
+}
+.content table tr td a {
+    padding-right: 1em;
+    color: var(--kodopy-green);
+    text-decoration: none;
 }
