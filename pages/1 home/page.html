@@ -1,34 +1,20 @@
 
-<h2>Welcome to KodoPy Docs</h2>
-<p>This is an example of a left sidebar layout with syntax-highlighted code.</p>
+<h2>Welcome to the KodoPy Docs</h2>
+<p>
+    These Doc pages serve as a quick reference for the videos, courses, and projects I create.
+    Most of my work focuses on 3D applications and automation.
+    Please note that this site is a work in progress and not intended to be a comprehensive manual for any specific topic.
+    Content will be updated over time as development continues.
+    Explore the links below to discover my projects and stay connected.
+</p>
 
-<!-- Code Example with Line Numbers -->      
-<pre class="line-numbers"><code class="language-python"># KodoPy
-def duplicate_mesh_in_place(context, target_obj, ensure_updated=True):
-    if not (isinstance(target_obj, bpy.types.Object) and isinstance(target_obj.data, bpy.types.Mesh)):
-        return
-    if ensure_updated:
-        if target_obj.data.is_editmode:
-            target_obj.update_from_editmode()
-    obj = target_obj.copy()
-    obj.data = target_obj.data.copy()
-    obj.animation_data_clear()
-    collection = None
-    # Place directly into the same collection
-    if len(target_obj.users_collection) == 1:
-        collection = target_obj.users_collection[0]
-    # Attempt to put in best collection
-    if collection is None:
-        visible_collections = visible_scene_collections(context)            
-        for user_collection in target_obj.users_collection:
-            if user_collection in visible_collections:
-                collection = user_collection
-                break
-    # Link to active collection
-    if collection is None:
-        context.collection.objects.link(obj)
-    # Link to found collection
-    else:
-        link_object_to_collection(collection, obj)
-    return obj
-</code></pre>
+<h2>My Links</h2>
+<p>
+    <ul>
+        <li><a href="https://github.com/KodoPy-Dev">GitHub</a></li>
+        <li><a href="https://www.youtube.com/@KodoPy">YouTube</a></li>
+        <li><a href="https://www.udemy.com/user/kodopy">Udemy</a></li>
+        <li><a href="https://discord.gg/SK9AQYyJBx">Discord</a></li>
+        <li><a href="https://kodopy.gumroad.com">GumRoad</a></li>
+    </ul>
+</p>

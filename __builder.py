@@ -1,24 +1,21 @@
+########################•########################
+"""                   KodoPy                  """
+########################•########################
+
 import os
 import shutil
 from pathlib import Path
 
 
-def get_local_folders(directory):
-    return [path.resolve() for path in Path(directory).iterdir() if path.is_dir()]
-
-def get_local_files(directory):
-    return [path.resolve() for path in Path(directory).iterdir() if path.is_file()]
-
-def get_all_folders(directory):
-    return [path.resolve() for path in Path(directory).rglob("*") if path.is_dir()]
-
-def get_all_files(directory):
-    return [path.resolve() for path in Path(directory).rglob("*") if path.is_file()]
-
-
 CUR_DIR = Path(os.path.dirname(os.path.abspath(__file__)))
 PAGES_NAMES = 'pages'
 PAGES_DIR = CUR_DIR.joinpath(PAGES_NAMES)
+
+
+get_local_folders = lambda directory : [path.resolve() for path in Path(directory).iterdir() if path.is_dir()]
+get_local_files = lambda directory : [path.resolve() for path in Path(directory).iterdir() if path.is_file()]
+get_all_folders = lambda directory : [path.resolve() for path in Path(directory).rglob("*") if path.is_dir()]
+get_all_files = lambda directory : [path.resolve() for path in Path(directory).rglob("*") if path.is_file()]
 
 
 class Page:
@@ -35,6 +32,7 @@ class Page:
         self.write_path = None
         # Sub
         self.sub_pages = []
+        self.parent_names = []
 
 
 def gen_page(folder=None):
@@ -178,25 +176,24 @@ def gen_pages():
     root_folders = get_local_folders(PAGES_DIR)
     for root_folder in root_folders:
         root_page = gen_page(folder=root_folder)
-
         # Error
         if root_page is None:
             print("Error : Failed to create root page")
             continue
-
+        # Add
         pages.append(root_page)
 
         # Sub Pages
         sub_folders = get_local_folders(root_folder)
         for sub_folder in sub_folders:
             sub_page = gen_page(folder=sub_folder)
-
             # Error
             if sub_page is None:
                 print("Error : Failed to create sub page")
                 continue
-
-            # Add Sub Page
+            # Parent
+            sub_page.parent_names.append(root_page.page_title)
+            # Add
             root_page.sub_pages.append(sub_page)
 
     return pages
@@ -219,7 +216,8 @@ def build():
     # Nav
     nav_items = []
     nav_items.append('\t\t<nav class="sidebar">')
-    nav_items.append('\t\t\t<img src="images/KodoPy.png">')
+    nav_items.append('\t\t\t<a href="https://github.com/KodoPy-Dev" target="_blank"><img src="images/KodoPy.png"></a>')
+
     for page in pages:
         all_pages.append(page)
         tag = f'\t\t\t<a href="{page.write_name}">{page.page_title}</a>'
@@ -235,6 +233,13 @@ def build():
 
     # Write
     for page in all_pages:
+
+        # header = ""
+        # if page.parent_names:
+        #     header = f'<h1>{" » ".join(page.parent_names)} » {page.page_title}</h1>'
+        # else:
+        #     header = f'<h1>{page.page_title}</h1>'
+
         content = [
             '<!DOCTYPE html>',
             '<html lang="en">',
@@ -248,11 +253,13 @@ def build():
             '\t\t<link href="styles/theme.css" rel="stylesheet">',
             '\t</head>',
             '\t<body>',
+            '\n<!--------------------------------------------- NAV --------------------------------------------->',
             *nav_items,
             '\t\t<div class="content">',
-            '\n<!-- PAGE CONTENT START -->',
+            '\n<!--------------------------------------------- PAGE --------------------------------------------->',
+            # header,
             page.page_content,
-            '\n<!-- PAGE CONTENT END -->',
+            '\n<!--------------------------------------------- FOOTER --------------------------------------------->',
             '\t\t</div>',
             '\t\t<script src="scripts/prism.js"></script>',
             '\t\t<script>Prism.highlightAll();</script>',
@@ -262,10 +269,6 @@ def build():
         ]
         page.write_path.write_text("\n".join(content), encoding="utf-8")
 
-    # home_file = CUR_DIR.joinpath('home.html')
-    # if os.path.exists(home_file):
-    #     index_file = CUR_DIR.joinpath('index.html')
-    #     home_file.rename(index_file)
 
 if __name__ == "__main__":
     build()

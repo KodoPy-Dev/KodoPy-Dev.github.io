@@ -10,72 +10,50 @@
 		<link href="styles/theme.css" rel="stylesheet">
 	</head>
 	<body>
+
+<!--------------------------------------------- NAV --------------------------------------------->
 		<nav class="sidebar">
-			<img src="images/KodoPy.png">
+			<a href="https://github.com/KodoPy-Dev" target="_blank"><img src="images/KodoPy.png"></a>
 			<a href="index.html">Home</a>
-			<a href="vs_code.html">Vs Code</a>
 			<a href="python.html">Python</a>
 			<ul>
 				<li><a href="python_introduction.html">Introduction</a></li>
 				<li><a href="python_operators.html">Operators</a></li>
+				<li><a href="python_control_flow.html">Control Flow</a></li>
 				<li><a href="python_functions.html">Functions</a></li>
 				<li><a href="python_types.html">Types</a></li>
-				<li><a href="python_classes.html">Classes</a></li>
 				<li><a href="python_modules.html">Modules</a></li>
 			</ul>
 			<a href="blender.html">Blender</a>
 			<ul>
 				<li><a href="blender_introduction.html">Introduction</a></li>
-				<li><a href="blender_scripting.html">Scripting</a></li>
-				<li><a href="blender_mesh.html">Mesh</a></li>
-			</ul>
-			<a href="graphics.html">Graphics</a>
-			<a href="cmake.html">Cmake</a>
-			<a href="c++.html">C++</a>
-			<ul>
-				<li><a href="c++_introduction.html">Introduction</a></li>
 			</ul>
 		</nav>
 		<div class="content">
 
-<!-- PAGE CONTENT START -->
+<!--------------------------------------------- PAGE --------------------------------------------->
 
-<h2>Welcome to KodoPy Docs</h2>
-<p>This is an example of a left sidebar layout with syntax-highlighted code.</p>
+<h2>Welcome to the KodoPy Docs</h2>
+<p>
+    These Doc pages serve as a quick reference for the videos, courses, and projects I create.
+    Most of my work focuses on 3D applications and automation.
+    Please note that this site is a work in progress and not intended to be a comprehensive manual for any specific topic.
+    Content will be updated over time as development continues.
+    Explore the links below to discover my projects and stay connected.
+</p>
 
-<!-- Code Example with Line Numbers -->      
-<pre class="line-numbers"><code class="language-python"># KodoPy
-def duplicate_mesh_in_place(context, target_obj, ensure_updated=True):
-    if not (isinstance(target_obj, bpy.types.Object) and isinstance(target_obj.data, bpy.types.Mesh)):
-        return
-    if ensure_updated:
-        if target_obj.data.is_editmode:
-            target_obj.update_from_editmode()
-    obj = target_obj.copy()
-    obj.data = target_obj.data.copy()
-    obj.animation_data_clear()
-    collection = None
-    # Place directly into the same collection
-    if len(target_obj.users_collection) == 1:
-        collection = target_obj.users_collection[0]
-    # Attempt to put in best collection
-    if collection is None:
-        visible_collections = visible_scene_collections(context)            
-        for user_collection in target_obj.users_collection:
-            if user_collection in visible_collections:
-                collection = user_collection
-                break
-    # Link to active collection
-    if collection is None:
-        context.collection.objects.link(obj)
-    # Link to found collection
-    else:
-        link_object_to_collection(collection, obj)
-    return obj
-</code></pre>
+<h2>My Links</h2>
+<p>
+    <ul>
+        <li><a href="https://github.com/KodoPy-Dev">GitHub</a></li>
+        <li><a href="https://www.youtube.com/@KodoPy">YouTube</a></li>
+        <li><a href="https://www.udemy.com/user/kodopy">Udemy</a></li>
+        <li><a href="https://discord.gg/SK9AQYyJBx">Discord</a></li>
+        <li><a href="https://kodopy.gumroad.com">GumRoad</a></li>
+    </ul>
+</p>
 
-
-<!-- PAGE CONTENT END -->
+<!--------------------------------------------- FOOTER --------------------------------------------->
 		</div>
 		<script src="scripts/prism.js"></script>
 		<script>Prism.highlightAll();</script>

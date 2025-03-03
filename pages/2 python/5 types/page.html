@@ -1,0 +1,24 @@
+
+<h2>Common Builtin Data Type Constructors</h2>
+<ul>
+    <li>list() - Creates a new list (e.g., list([1, 2, 3]) → [1, 2, 3])</li>
+    <li>set() - Creates a new set, removing duplicates (e.g., set([1, 2, 2, 3]) → {1, 2, 3})</li>
+    <li>dict() - Creates a new dictionary (e.g., dict(a=1, b=2) → {'a': 1, 'b': 2})</li>
+    <li>tuple() - Creates a new tuple (e.g., tuple([1, 2, 3]) → (1, 2, 3))</li>
+    <li>str() - Converts an object to a string (e.g., str(123) → "123")</li>
+    <li>int() - Converts a number or string to an integer (e.g., int("42") → 42)</li>
+    <li>float() - Converts a number or string to a floating-point number (e.g., float("3.14") → 3.14)</li>
+    <li>bool() - Converts an object to True or False (e.g., bool(0) → False)</li>
+    <li>bytes() - Creates a bytes object (e.g., bytes("hello", "utf-8"))</li>
+    <li>bytearray() - Creates a mutable byte array (e.g., bytearray(5))</li>
+    <li>complex() - Creates a complex number (e.g., complex(1, 2) → 1+2j)</li>
+    <li>frozenset() - Creates an immutable set (e.g., frozenset([1, 2, 3]))</li>
+</ul>
+
+<h2>Comprehension Constructors</h2>
+<ul>
+    <li>list - [i for i in range(10)]         → [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</li>
+    <li>set - {i for i in range(10)}          → {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}</li>
+    <li>dict - {i : i**2 for i in range(4)}   → {0: 0, 1: 1, 2: 4, 3: 9}</li>
+    <li>tuple - (i for i in range(10))        → (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)</li>
+</ul>
