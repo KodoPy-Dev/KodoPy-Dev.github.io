@@ -169,6 +169,15 @@ b = to_float(value=a, fallback=None)
 </table>
 
 <h2>Comprehension Constructors</h2>
+<a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions">List Comprehension Docs</a>
+<p>
+    Comprehensions can be made for any object that can be initialized with an iterator object.
+    Behind the scenes, an expression such as "i for i in range(10)", actually just creates an iterator.
+    So the magic to this is making iterator expressions inside of the sequence type's initializer syntax.
+    For example a list can be initialized like this "list()" OR like this "[]".
+    So all we have to do is put an iterator expression within the initializer syntax.
+    The object will iterate over the items in the iterator and initialize itself with it.
+</p>
 <table>
     <tr><th>Name</th>  <th>Example</th>                      <th>Result</th></tr>
     <tr><td>list</td>  <td>[i for i in range(10)]</td>       <td>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</td></tr>
