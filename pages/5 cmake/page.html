@@ -30,4 +30,27 @@
 <p>
     CMake is fully integrated into several code editors (such as VS-Code) and integrated development environments (IDEs) like Visual Studio.
     When it comes to <a target="_blank" href="https://code.visualstudio.com">VS-Code</a> you can install the official CMake Extension <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools">CMake Extension</a>.
+    The CMake extension will let you navigate the project's build structure with a graphical interface, create build configurations, set breakpoints and debug CMake scripts, and really its a long list of features.
+</p>
+
+<h2>Concept</h2>
+<p>
+    Of course, you should always check the <a target="_blank" href="https://cmake.org/cmake/help/latest">Official CMake Docs</a> for detailed information.  
+    But from a high-level perspective, CMake works by using configuration files called <code>CMakeLists.txt</code> within your project directory. These files are where you script your CMake commands.  
+    You typically place one <code>CMakeLists.txt</code> file in each directory of your project, with a main one at the root level, which serves as the entry point for the build configuration.
+    The root level <code>CMakeLists.txt</code> file is where you would set the CMake version requirements and define your main project.
+</p>
+<p>
+    CMake is based around the concept of <b>targets</b>. A target is essentially an output unit of your build, such as an executable, a library, or even a test.  
+    The first step is defining your project by calling <code>project()</code>, where you specify your project's name. This defines the "root" target for your project.  
+    After that, you can create additional targets like **libraries** or **executables**, using commands such as <code>add_library()</code> and <code>add_executable()</code>.
+</p>
+<p>
+    You can link these targets together using the <code>target_link_libraries()</code> command, allowing you to organize your project's structure and dependencies in a modular way.  
+    CMake also provides various target types, such as **STATIC**, **SHARED**, or **INTERFACE** libraries, giving you the flexibility to build your project in different configurations.  
+    In short, CMake allows you to build a project with various targets and link them in the most efficient and logical way for your needs.
+</p>
+<p>
+    By using this structure, CMake enables a clean, flexible, and scalable build process that works across different platforms and compilers.
+    This modularity also makes it easier to manage large projects with multiple dependencies.
 </p>

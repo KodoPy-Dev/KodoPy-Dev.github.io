@@ -165,7 +165,6 @@ body {
     border-color: var(--side-bg-a);
 }
 .content b {
-    padding-right: 0.5rem;
     color: var(--main-bold);
 }
 .content embed {
