@@ -108,7 +108,7 @@ body {
     border-radius: 5px;
 }
 .content p {
-    padding: 0.5rem;
+    padding: 0.5rem 0 0.5rem 0;
 }
 .content a {
     color: var(--kodopy-green);
