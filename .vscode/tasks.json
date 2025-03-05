@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "👽 BUILD",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}\\dev\\builder.py"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "never",
+                "close": true
+            }
+        },
+        {
+            "label": "👻 CLEAN",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}\\dev\\cleaner.py"
+            ],
+            "presentation": {
+                "reveal": "never",
+                "close": true
+            }
+        }
+    ]
+}
