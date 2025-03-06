@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>KodoPy Docs</title>
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+		<link href="styles/prism.css" rel="stylesheet">
+		<link href="styles/theme.css" rel="stylesheet">
+	</head>
+	<body>
+
+<!--------------------------------------------- NAV --------------------------------------------->
+		<nav class="sidebar">
+			<a href="https://github.com/KodoPy-Dev" target="_blank"><img src="images/KodoPy.png"></a>
+			<a href="index.html">Home</a>
+			<a href="python.html">Python</a>
+			<ul>
+				<li><a href="python_software.html">Software</a></li>
+				<li><a href="python_cheat_sheet.html">Cheat Sheet</a></li>
+			</ul>
+			<a href="blender.html">Blender</a>
+			<ul>
+				<li><a href="blender_introduction.html">Introduction</a></li>
+			</ul>
+			<a href="git.html">Git</a>
+			<a href="cmake.html">Cmake</a>
+			<a href="graphics.html">Graphics</a>
+			<ul>
+				<li><a href="graphics_opengl_setup.html">Opengl Setup</a></li>
+			</ul>
+		</nav>
+		<div class="content">
+
+<!--------------------------------------------- PAGE --------------------------------------------->
+<h2>Editors</h2>
+<p>
+    Visual Studio Code (VS Code) is one of the easiest and most popular choices for Python development today.
+    It offers many free extensions that enhance Python support within the editor.
+    Another option (but more as a side companion) is Jupyter Notebooks, a web-based interface for Python that allows running code in isolated blocks rather than executing an entire script.
+    VS Code also supports Jupyter Notebooks through an extension, enabling the same functionality within the editor.
+    Jupyter Notebooks are particularly useful for fast iteration and interactive coding.
+    Watching some tutorial videos can help give you an idea for the differences but essentially you might prefer using both.
+</p>
+<ul>
+    <li><a target="_blank" href="https://code.visualstudio.com">Visual Studio Code</a></li>
+    <li><a target="_blank" href="https://jupyter.org">Jupyter Notebook</a></li>
+    <li><a target="_blank" href="https://www.jetbrains.com/pycharm">PyCharm</a></li>
+    <li><a target="_blank" href="https://atom-editor.cc">Atom</a></li>
+    <li><a target="_blank" href="https://www.vim.org">Vim</a></li>
+    <li><a target="_blank" href="https://notepad-plus-plus.org">Notepad ++</a></li>
+    <li><a target="_blank" href="https://docs.python.org/3/library/idle.html">Python IDLE</a></li>
+</ul>
+
+<h2>Python Distributions</h2>
+<ul>
+    <li><a target="_blank" href="https://docs.python.org/3/using/index.html">Python Setup and Usage Docs</a></li>
+    <li><a target="_blank" href="https://docs.python.org/3/using/windows.html">Windows Docs</a></li>
+    <li><a target="_blank" href="https://docs.python.org/3/using/unix.html">Unix Docs</a></li>
+    <li><a target="_blank" href="https://docs.python.org/3/using/mac.html">Mac Installer Docs</a></li>
+</ul>
+<p>
+    Some applications embed a Python interpreter within their source code (such as Blender), meaning you may not need to install Python separately on your machine.
+    However, it's still a good idea to install Python separately, as your code editor will likely require it for IntelliSense and debugging.
+</p>
+<ul>
+    <li><a target="_blank" href="https://www.python.org/downloads">Python Downloads Page</a></li>
+</ul>
+
+<h2>Windows Help</h2>
+<p>
+    When installing python, make sure to enable "Add Python to PATH" option.
+    This ensures the system paths will include python.
+</p>
+<img src="https://docs.python.org/3/_images/win_installer.png" alt="Python Windows Installer">
+<p>
+    You can check if your system recognizes python as a command.
+    Just open Command Prompt and type "python".
+    It should start the python interactive interpreter in the command prompt if working.
+    You can exit the python interpreter by typing quit(), returning you back to the command prompt.
+    You can also type "echo %PATH%" into command prompt to see if python is in the system paths.
+</p>
+<img src="images/Windows Echo Sys Path for Python.png" alt="Windows Echo Sys Path for Python">
+<p>
+    On windows, you can open the System Properties and edit the Enviroment Variables manually if needed.
+    Just make sure to close command prompt or any terminals for the updates to take effect.
+    <b>NOTE</b> You want to add the python directory and the python/Scripts directory.
+    The Scripts sub directory includes the python PIP script which allows you to easily use pip install commands to install 3rd party modules.
+</p>
+<img src="images/Windows Sys Var Editor.png" alt="Windows Sys Var Editor">
+<p>
+    Here is a typical install directory for windows.
+</p>
+<img src="images/Windows Python Install Directory.png" alt="Windows Python Install Directory">
+
+
+<!--------------------------------------------- FOOTER --------------------------------------------->
+		</div>
+		<script src="scripts/prism.js"></script>
+		<script>Prism.highlightAll();</script>
+		<script src="scripts/logic.js"></script>
+	</body>
+</html>
