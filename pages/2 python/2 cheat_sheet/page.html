@@ -42,7 +42,6 @@
    <tr><td>in</td>     <td>Membership</td> <td>Check if x is in iterable</td>      <td>var = x in y</td></tr>
    <tr><td>not in</td> <td>Membership</td> <td>Check if x is NOT in iterable</td>  <td>var = x not in y</td></tr>
 </table>
-
 <pre class="line-numbers"><code class="language-python">''' Arithmetic '''
 x = 10
 y = 2
@@ -54,7 +53,6 @@ result = x // y # ← 5
 result = x %  y # ← 0
 result = x ** y # ← 100
 </code></pre>
-
 <pre class="line-numbers"><code class="language-python">''' Comparison '''
 x = 10
 y = 2
@@ -63,14 +61,12 @@ if x > y:
 if x == y:
     print("X is equal to Y")
 </code></pre>
-
 <pre class="line-numbers"><code class="language-python">''' Logical '''
 x = 10
 y = 2
 if x > y and y > 0:
     print("X is greater than Y and Y is greater than 0")
 </code></pre>
-
 <pre class="line-numbers"><code class="language-python">''' Identity '''
 # Using id
 a = 10
@@ -87,12 +83,79 @@ a = 10
 b = 12
 result = a is b # ← False : The value types don't point to the same value
 </code></pre>
-
 <pre class="line-numbers"><code class="language-python">''' Membership '''
 a = [1, 2, 3, 4]
 b = 3
 result = b in a     # ← True  : Since b is equal to 3 and 3 is in the list a
 result = b not in a # ← False : Since b does occur in list a
+</code></pre>
+
+<h2>Loops</h2>
+<pre class="line-numbers"><code class="language-python">''' For Loops '''
+# Iterate over each item in the list
+items = [1, 2, 3]
+for item in items:
+    print(item)
+
+# Iterate over each item using range
+for item in range(3):
+    print(item)
+
+# Iterate over a Dictionary
+items_map = {1:'ONE', 2:'TWO', 3:'THREE'}
+for key in items_map.keys():
+    print(key)
+for value in items_map.values():
+    print(value)
+for key, value in items_map.items():
+    print(f"{key} -> {value}")
+
+# Iterate over a custom type
+from uuid import uuid4
+class Item:
+    def __init__(self):
+        self.id = uuid4()
+
+items = [Item(), Item(), Item()]
+for item in items:
+    print(item.id)
+
+# Nested for loops
+nested_items = [
+    (1, 2, 3),
+    (4, 5, 6),
+    (7, 8, 9),
+]
+for item in nested_items:
+    for number in item:
+        print(number)
+</code></pre>
+<pre class="line-numbers"><code class="language-python">''' While Loops '''
+# Loop until condition is met
+iterations = 0
+limit = 20
+while iterations < limit:
+    iterations += 1
+print(iterations) # 20
+
+# ORDER -> Arbitrary
+qued_items = {1,2,3,4,5}
+while qued_items:
+    item = qued_items.pop()
+    print(item)
+
+# ORDER -> Last in First Out
+qued_items = [1,2,3,4,5]
+while qued_items:
+    item = qued_items.pop()
+    print(item)
+
+# ORDER -> First in First Out
+from collections import deque
+qued_items = deque([1,2,3,4,5])
+while qued_items:
+    item = qued_items.popleft()
+    print(item)   
 </code></pre>
 
 <h2>Builtin Functions</h2>
@@ -185,6 +248,31 @@ b = to_float(value=a, fallback=None)
     <tr><td>dict</td>  <td>{i : i**2 for i in range(4)}</td> <td>{0: 0, 1: 1, 2: 4, 3: 9}</td></tr>
     <tr><td>tuple</td> <td>(i for i in range(10))</td>       <td>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)</td></tr>
 </table>
+<pre class="line-numbers"><code class="language-python">''' Examples '''
+# 1 Dimensional List
+items = [i for i in range(10)]
+print(items) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# 1 Dimensional List : With Checks : Only even numbers
+items = [i for i in range(20) if i % 2 == 0]
+print(items) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# 1 Dimensional Set
+items = {i for i in range(10)}
+print(items) # {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+# 1 Dimensional Dictionary
+items = {i : str(i) for i in range(10)}
+print(items) # {0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7', 8: '8', 9: '9'}
+
+# 2 Dimensional List : List with nested List
+items = [[i, j] for i in range(3) for j in range(3)]
+print(items) # [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]]
+
+# 2 Dimensional List : List with nested Tuples
+items = [(i, j) for i in range(3) for j in range(3)]
+print(items) # [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2)]
+</code></pre>
 
 <h2>Builtin Modules</h2>
 <a target="_blank" href="https://docs.python.org/3/library/index.html">All Builtin Modules</a>
@@ -227,10 +315,103 @@ b = to_float(value=a, fallback=None)
     <tr><td><a target="_blank" href="https://docs.python.org/3/library/tempfile.html">tempfile</a></td>               <td>File and Directory</td>   <td>Generate temporary files and directories</td></tr>
     <tr><td><a target="_blank" href="https://docs.python.org/3/library/fnmatch.html">fnmatch</a></td>                 <td>File and Directory</td>   <td>Unix filename pattern matching</td></tr>
     <tr><td><a target="_blank" href="https://docs.python.org/3/library/linecache.html">linecache</a></td>             <td>File and Directory</td>   <td>Random access to text lines</td></tr>
+    <tr><td><a target="_blank" href="https://docs.python.org/3/library/uuid.html">uuid</a></td>                       <td>Support</td>              <td>Immutable UUID objects</td></tr>
 </table>
+<pre class="line-numbers"><code class="language-python">''' System Path Examples '''
+# Using OS to get the directory for the current py File
+import os
+file_directory = os.path.dirname(os.path.abspath(__file__))
 
+# Using pathlib.Path to get the directory for the current py File
+from pathlib import Path
+file_directory = Path(__file__).resolve().parent
 
+# Some Path properties and methods
+from pathlib import Path
+user_directory = Path("C:\\Users\\kodopy")
+print(user_directory)           # C:\Users\kodopy
+print(user_directory.drive)     # C:
+print(user_directory.parent)    # C:\Users
+print(user_directory.exists())  # True
+print(user_directory.is_dir())  # True
+print(user_directory.is_file()) # False
+# Join
+docs_directory = user_directory.joinpath("Documents")
+print(docs_directory)           # C:\Users\kodopy\Documents
+print(docs_directory.drive)     # C:
+print(docs_directory.parent)    # C:\Users
+print(docs_directory.exists())  # True
+print(docs_directory.is_dir())  # True
+print(docs_directory.is_file()) # False
+</code></pre>
+<pre class="line-numbers"><code class="language-python">''' Enums Examples '''
+import math
+from enum import Enum, auto
 
+class OPTS(Enum):
+    NONE = auto()
+    ADD  = auto()
+    SUB  = auto()
+    MUL  = auto()
+    DIV  = auto()
+    ERR  = auto()
 
+def perform_calc(num_a=0, num_b=0, options=OPTS.NONE):
+    if options == OPTS.NONE:
+        return None
+    elif options == OPTS.ADD:
+        return num_a + num_b
+    elif options == OPTS.SUB:
+        return num_a - num_b
+    elif options == OPTS.MUL:
+        return num_a * num_b
+    elif options == OPTS.DIV:
+        if num_b == 0:
+            return math.inf
+        return num_a / num_b
+    return None
 
+print(perform_calc(num_a=10, num_b=2, options=OPTS.NONE)) # None
+print(perform_calc(num_a=10, num_b=2, options=OPTS.ADD))  # 12
+print(perform_calc(num_a=10, num_b=2, options=OPTS.SUB))  # 8
+print(perform_calc(num_a=10, num_b=2, options=OPTS.MUL))  # 20
+print(perform_calc(num_a=10, num_b=2, options=OPTS.DIV))  # 5.0
+print(perform_calc(num_a=10, num_b=0, options=OPTS.DIV))  # inf
+print(perform_calc(num_a=10, num_b=2, options=OPTS.ERR))  # None
 
+print(dir(OPTS))      # ['ADD', 'DIV', 'ERR', 'MUL', 'NONE', 'SUB', '__class__', '__contains__', '__doc__', '__getitem__', '__init_subclass__', '__iter__', '__len__', '__members__', '__module__', '__name__', '__qualname__']
+print(dir(OPTS.ADD))  # ['__class__', '__doc__', '__eq__', '__hash__', '__module__', 'name', 'value']
+print(OPTS.ADD)       # OPTS.ADD
+print(OPTS.ADD.name)  # ADD
+print(OPTS.ADD.value) # 2
+
+from enum import Flag
+
+class OPTS(Flag):
+    NONE = auto()
+    SAVE = auto()
+    CLOSE = auto()
+    NOTIFY = auto()
+
+def callback(options=OPTS.NONE):
+    if OPTS.NONE in options:
+        print("Null")
+        return
+    operation_executed = False
+    if OPTS.SAVE in options:
+        operation_executed = True
+        print("File Saved")
+    if OPTS.CLOSE in options:
+        operation_executed = True
+        print("File Closed")
+    if OPTS.NOTIFY in options:
+        operation_executed = True
+        print("Notified")
+    if not operation_executed:
+        print("Null")
+
+callback(options=OPTS.NONE)               # Null
+callback(options=OPTS.SAVE)               # File Saved
+callback(options=OPTS.SAVE | OPTS.CLOSE)  # File Saved, File Closed
+callback(options=OPTS.SAVE | OPTS.NOTIFY) # File Saved, Notified
+</code></pre>

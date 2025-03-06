@@ -54,3 +54,356 @@
     By using this structure, CMake enables a clean, flexible, and scalable build process that works across different platforms and compilers.
     This modularity also makes it easier to manage large projects with multiple dependencies.
 </p>
+
+<h2>Tooling</h2>
+<p>
+    Use the links below to get CMake, VS-Code, Git, GitHub Desktop, and to make your github account.
+    CMake and Git might have a lot of installer options, just select standard choices and everything will be okay for our purposes.
+</p>
+<b>You will also need to get a compiler too, check the compiler section below after this!</b>
+<ul>
+    <li><a target="_blank" href="https://cmake.org">CMake</a></li>
+    <li><a target="_blank" href="https://code.visualstudio.com">Visual Studio Code</a></li>
+    <li><a target="_blank" href="https://git-scm.com">Git</a></li>
+    <li><a target="_blank" href="https://github.com">GitHub (Make an account here if you want one)</a></li>
+    <li><a target="_blank" href="https://github.com/apps/desktop">GitHub Desktop</a></li>
+</ul>
+
+<p>Here are the extensions for VS-Code that I use. Just open the extensions section in VS-Code and search for the ID name.</p>
+<p>(CRTL + SHIFT + X) This will open the extension section in VS-Code.</p>
+<ul>
+    <li><a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack">ID = ms-vscode.cpptools-extension-pack</a></li>
+    <li><a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools">ID = ms-vscode.cmake-tools</a></li>
+</ul>
+
+<h2>C++ Compilers</h2>
+<p>
+    Okay, now that you have CMake and Visual Studio Code, you will need to get a C++ Compiler.
+    There are many options and various ways to obtain compilers.
+    For Windows, a good C++ compiler can be obtained by downloading Visual Studio, and NO, its not VS-Code.
+    Visual Studio has a free version called community edition, so download that one if needed.
+    While installing Visual Studio, make sure you select the C++ Desktop Development Workload.
+    You can always change this later if needed. You simply can run the installer again and it will let you modify and add more workloads.
+    For Linux, most of the distros already come with compilers, and for Mac, you may also already have one, either way they options are listed below.
+</p>
+
+<b>This is not a full list of compilers, feel free to look around, however, these are popular choices and among the best.</b>
+
+<p>Windows</p>
+<table>
+    <tr>
+        <th>Compiler</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://visualstudio.microsoft.com">MSVC</a></td>
+        <td>(Microsoft Visual C++) - Download the Community Edition and select C++ Workload within the installer</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://www.mingw-w64.org">MinGW</a></td>
+        <td>(Minimalist GNU for Windows) - Ports GCC to Windows</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://llvm.org">Clang</a></td>
+        <td>Available via LLVM, often used with MSVC or MinGW</td>
+    </tr>
+</table>
+<p>Linux</p>
+<table>
+    <tr>
+        <th>Compiler</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://gcc.gnu.org">GCC</a></td>
+        <td>The most widely used compiler on Linux</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://llvm.org">Clang</a></td>
+        <td>LLVM's compiler, an alternative to GCC with better error messages and modularity</td>
+    </tr>
+</table>
+<p>Mac</p>
+<table>
+    <tr>
+        <th>Compiler</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://developer.apple.com/xcode">Xcode Clang</a></td>
+        <td>Apple's default compiler, included with Xcode and Command Line Tools</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://llvm.org">Clang</a></td>
+        <td>LLVM's Clang, available via Homebrew or direct installation</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://gcc.gnu.org">GCC</a></td>
+        <td>Available via Homebrew, but often just an alias for Clang</td>
+    </tr>
+</table>
+
+<h2>Common CMake Variables</h2>
+<p><a target="_blank" href="https://cmake.org/cmake/help/latest/manual/cmake-variables.7.html">CMake Variables</a></p>
+<table>
+    <tr>
+        <th>Macro</th>
+        <th>Category</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/variable/CMAKE_SOURCE_DIR.html#cmake-source-dir">CMAKE_SOURCE_DIR</a></td>
+        <td>Directories and Paths</td>
+        <td>The path to the top level of the source tree.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/variable/CMAKE_BINARY_DIR.html#cmake-binary-dir">CMAKE_BINARY_DIR</a></td>
+        <td>Directories and Paths</td>
+        <td>The path to the top level of the build tree.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/variable/CMAKE_CURRENT_SOURCE_DIR.html#cmake-current-source-dir">CMAKE_CURRENT_SOURCE_DIR</a></td>
+        <td>Directories and Paths</td>
+        <td>The path to the source directory currently being processed.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/variable/CMAKE_CURRENT_BINARY_DIR.html#cmake-current-binary-dir">CMAKE_CURRENT_BINARY_DIR</a></td>
+        <td>Directories and Paths</td>
+        <td>The path to the binary directory currently being processed.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_COMPILER.html#cmake-lang-compiler">CMAKE_CXX_COMPILER</a></td>
+        <td>Compiler and Build</td>
+        <td>The path to the C++ compiler.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_COMPILER.html#cmake-lang-compiler">CMAKE_C_COMPILER</a></td>
+        <td>Compiler and Build</td>
+        <td>The path to the C compiler.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html#cmake-build-type">CMAKE_BUILD_TYPE</a></td>
+        <td>Compiler and Build</td>
+        <td>The build type (e.g., Debug, Release).</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/variable/CMAKE_SYSTEM_NAME.html#cmake-system-name">CMAKE_SYSTEM_NAME</a></td>
+        <td>Compiler and Build</td>
+        <td>The name of the target system (e.g., Windows, Linux).</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/variable/CMAKE_INSTALL_PREFIX.html#cmake-install-prefix">CMAKE_INSTALL_PREFIX</a></td>
+        <td>Installation Paths</td>
+        <td>The install directory (default is <code>/usr/local</code> on Unix).</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/command/install.html">CMAKE_INSTALL_BINDIR</a></td>
+        <td>Installation Paths</td>
+        <td>The directory for binaries (e.g., <code>bin</code>).</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/variable/PROJECT_NAME.html#project-name">PROJECT_NAME</a></td>
+        <td>Project and Versioning</td>
+        <td>The name of the project as defined by <code>project()</code>.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/variable/PROJECT_VERSION.html#project-version">PROJECT_VERSION</a></td>
+        <td>Project and Versioning</td>
+        <td>The version of the project (if specified in <code>project()</code>).</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/variable/CMAKE_COMMAND.html#cmake-command">CMAKE_COMMAND</a></td>
+        <td>Build System</td>
+        <td>The full path to the CMake executable.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/variable/CMAKE_GENERATOR.html#cmake-generator">CMAKE_GENERATOR</a></td>
+        <td>Build System</td>
+        <td>The generator used for the build system (e.g., Ninja, Unix Makefiles).</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/variable/CMAKE_SIZEOF_VOID_P.html#cmake-sizeof-void-p">CMAKE_SIZEOF_VOID_P</a></td>
+        <td>Platform & OS</td>
+        <td>The pointer size in bytes (useful for detecting 32-bit vs 64-bit).</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/variable/CMAKE_CXX_STANDARD.html#cmake-cxx-standard">CMAKE_CXX_STANDARD</a></td>
+        <td>Platform & OS</td>
+        <td>The C++ standard being used (e.g., 11, 14, 17).</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/variable/CMAKE_CXX_STANDARD_REQUIRED.html#cmake-cxx-standard-required">CMAKE_CXX_STANDARD_REQUIRED</a></td>
+        <td>Platform & OS</td>
+        <td>The C++ standard being used is required.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/envvar/CXXFLAGS.html">CMAKE_CXX_FLAGS</a></td>
+        <td>Compilation Flags</td>
+        <td>The flags for the C++ compiler.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/variable/CMAKE_EXE_LINKER_FLAGS.html#cmake-exe-linker-flags">CMAKE_EXE_LINKER_FLAGS</a></td>
+        <td>Compilation Flags</td>
+        <td>Flags passed to the linker for executables.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/variable/CMAKE_MODULE_PATH.html#cmake-module-path">CMAKE_MODULE_PATH</a></td>
+        <td>Miscellaneous</td>
+        <td>Paths where CMake looks for modules (for <code>find_package()</code>).</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/variable/CMAKE_RUNTIME_OUTPUT_DIRECTORY.html#cmake-runtime-output-directory">CMAKE_RUNTIME_OUTPUT_DIRECTORY</a></td>
+        <td>Miscellaneous</td>
+        <td>Where executables are placed.</td>
+    </tr>
+</table>
+
+<h2>Common CMake Commands</h2>
+<p><a target="_blank" href="https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html">CMake Build System</a></p>
+<table>
+    <tr>
+        <th>Command</th>
+        <th>Category</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/command/project.html#project">project</a></td>
+        <td>Project</td>
+        <td>Defines the project name and optionally the version.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/command/add_executable.html#add-executable">add_executable</a></td>
+        <td>Targets</td>
+        <td>Creates an executable target from the specified source files.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/command/add_library.html#add-library">add_library</a></td>
+        <td>Targets</td>
+        <td>Creates a library target (static, shared, or module).</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/command/add_subdirectory.html#add-subdirectory">add_subdirectory</a></td>
+        <td>Project Structure</td>
+        <td>Adds a subdirectory containing a CMakeLists.txt to the build.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/command/target_link_libraries.html#target-link-libraries">target_link_libraries</a></td>
+        <td>Linking</td>
+        <td>Links libraries to a target with appropriate visibility.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/command/target_include_directories.html#target-include-directories">target_include_directories</a></td>
+        <td>Includes</td>
+        <td>Specifies include directories for a target.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/command/find_package.html#find-package">find_package</a></td>
+        <td>Dependencies</td>
+        <td>Finds an installed package and makes it available.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/command/find_library.html#find-library">find_library</a></td>
+        <td>Dependencies</td>
+        <td>Finds a library file and sets its path to the specified variable.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/command/find_path.html#find-path">find_path</a></td>
+        <td>Dependencies</td>
+        <td>Finds a directory containing a specific file (e.g., a header).</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/command/find_program.html#find-program">find_program</a></td>
+        <td>Dependencies</td>
+        <td>Finds an executable program and sets its path to the specified variable.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/command/set.html#set">set</a></td>
+        <td>Variables</td>
+        <td>Defines or modifies a CMake variable.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/command/option.html#option">option</a></td>
+        <td>Configuration</td>
+        <td>Defines a boolean option that can be toggled by the user.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/command/add_compile_definitions.html#add-compile-definitions">add_compile_definitions</a></td>
+        <td>Compilation</td>
+        <td>Adds preprocessor definitions globally.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/command/target_compile_definitions.html#target-compile-definitions">target_compile_definitions</a></td>
+        <td>Compilation</td>
+        <td>Adds preprocessor definitions to a specific target.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/command/target_compile_options.html#target-compile-options">target_compile_options</a></td>
+        <td>Compilation</td>
+        <td>Specifies additional compiler options for a target.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/command/install.html#install">install</a></td>
+        <td>Installation</td>
+        <td>Defines installation rules for targets.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/command/configure_file.html#configure-file">configure_file</a></td>
+        <td>File Management</td>
+        <td>Processes a file and optionally replaces variables before copying.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/command/file.html#file">file</a></td>
+        <td>File Management</td>
+        <td>Finds files matching a pattern and stores them in a variable.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/command/execute_process.html#execute-process">execute_process</a></td>
+        <td>Execution</td>
+        <td>Runs an external command during CMake execution.</td>
+    </tr>
+    <tr>
+        <td><a target="_blank" href="https://cmake.org/cmake/help/latest/command/message.html#message">message</a></td>
+        <td>Debugging</td>
+        <td>Prints a message to the console with different severity levels.</td>
+    </tr>
+</table>
+
+<h2>Examples</h2>
+<p><b>These examples do not demonstrate all the possible argument options!</b></p>
+<p>
+    Any of the commands that have (source.cpp) being passed in as an argument can take a list of sources.
+    Like this, add_executable(MyApp source_a.cpp source_b.cpp source_c.cpp)
+</p>
+<pre class="line-numbers"><code class="language-cmake"># Define CMake Min Version (Check the version number of CMake that you are using)
+cmake_minimum_required(VERSION 4.0)
+
+# Define a Project (Add Version number if desired)
+project(MyProject VERSION 1.2.3)
+
+# Get the version number info if defined by project command
+# ${PROJECT_VERSION} → "1.2.3"
+# ${PROJECT_VERSION_MAJOR} → "1"
+# ${PROJECT_VERSION_MINOR} → "2"
+# ${PROJECT_VERSION_PATCH} → "3"
+
+# Create Executable (Creates a .exe file)
+add_executable(MyApp source.cpp)
+
+# Create Static Lib (Used for linking at compile time)
+add_library(MyLib STATIC source.cpp)
+
+# Create Dynamic Lib (Used for linking at run time)
+add_library(MyLib SHARED source.cpp)
+
+# Link a Static Lib to and Executable
+add_library(MyLib STATIC source.cpp)
+add_executable(MyApp source.cpp)
+target_link_libraries(MyApp MyLib)
+
+# Add Header Files
+add_library(MyLib STATIC source.cpp)
+target_include_directories(MyLib INTERFACE ${CMAKE_SOURCE_DIR}/include)
+</code></pre>
+
+
+
