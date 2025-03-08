@@ -37,39 +37,51 @@
 <!--------------------------------------------- PAGE --------------------------------------------->
 <h2>Introduction</h2>
 <p>
-    Welcome to the Learn Python section.
-    Here I will try to get you up and running with Python.
-    Before you begin, make sure you have a code editor and python installed.
-    <a target="_blank" href="python_software.html">Python Software Section</a>
+    Welcome to the Learn Python section!
+    In this tutorial, I'll guide you through the basics to get you up and running with Python.
+    Before we start, ensure you have two things ready, a code editor (like VS Code or PyCharm) and Python installed on your computer.
+    If you need help with installation, check out the <a target="_blank" href="python_software.html">Python Software Section</a>.
 </p>
 
-<h2>Part 1 - Interpretation</h2>
+<h2>Part 1 - Understanding the Python Interpreter</h2>
 <p>
-    Before diving into the code, let's take a quick glance under the hood.
-    This will give us a better understanding as to what is happening.
-    To investigate the mechanisms, let's turn our attention to the main application, the Python Interpreter.
+    Before we jump into writing code, let's take a quick look at how Python works behind the scenes.
+    This will help you understand what happens when you run your programs.
+    The key player here is the <strong>Python Interpreter</strong>, the program that reads and executes your Python code.
 </p>
-<p>For me, on my windows machine, the path is</p>
+<p>
+    On my Windows machine, for example, the interpreter is located at:
+</p>
 <code class="highlight">C:\Users\kodopy\AppData\Local\Programs\Python\Python313\python.exe</code>
 <p>
-    When you create a source code file for python, you will end the python file with the <code class="highlight">.py</code> file extension.
-    This lets your operating system make file associations and is the correct file type for the interpreter to recognize it.
-    When you want to run the python file, you will use a terminal to start the process.
-    In the terminal you will give your system the path to the python interpreter followed by the source code file path.
+    When you write Python code, you'll save it in a file with a <code class="highlight">.py</code> extension (e.g., <code class="highlight">script.py</code>).
+    This extension tells your operating system that it's a Python file and allows the interpreter to recognize it.
+    To run this file, you'll use a terminal (like Command Prompt on Windows or Terminal on macOS/Linux) and provide two pieces of information: the path to the Python interpreter and the path to your <code class="highlight">.py</code> file.
 </p>
-<p>Example</p>
-<code class="highlight">C:\Users\kodopy>python C:\script.py</code>
-
+<p>Here's an example command:</p>
+<code class="highlight">C:\Users\kodopy> python C:\script.py</code>
+<p>Let's break this command into its two main parts:</p>
+<ol>
+    <li><code class="highlight">python</code></li>
+    <p>
+        This is the command to launch the Python interpreter.
+        If your system's environment variables (like PATH) include the directory where <code class="highlight">python.exe</code> is stored, typing <code class="highlight">python</code> is enough to start it.
+        If this doesn't work on your machine, it means the path isn't set up yet. See the <a target="_blank" href="python_software.html">Software Section</a> for instructions on how to fix this.
+        Essentially, this part just tells your computer to run the Python program.
+    </p>
+    <li><code class="highlight">C:\script.py</code></li>
+    <p>
+        This is the path to your Python file.
+        After launching the interpreter with <code class="highlight">python</code>, you pass the file path as an argument.
+        The interpreter then locates your file and starts executing the code inside it.
+    </p>
+</ol>
 <p>
-    So what did that just do?
-    Well, if you set up your system paths to recognize python, typing python into the terminal will essentially just go and lookup the full path for you.
-    But what this does is tells your operating system to load python.
-    The next aspect of the command are the arguments that you pass into python.
-    In this case we passed in the script's file path.
-    So when the python interpreter begins running, it will actually see that path you passed in.
+    The diagram below illustrates how the Python interpreter processes your <code class="highlight">.py</code> file:
 </p>
-
 <embed src="pdfs/Python Interpreter.pdf" type="application/pdf" width="100%" height="645px"/>
+
+<h2>Part 2 - Our First Script</h2>
 
 
 <!--------------------------------------------- FOOTER --------------------------------------------->
