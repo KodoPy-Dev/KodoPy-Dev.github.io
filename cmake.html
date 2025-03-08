@@ -125,9 +125,7 @@
     You can always change this later if needed. You simply can run the installer again and it will let you modify and add more workloads.
     For Linux, most of the distros already come with compilers, and for Mac, you may also already have one, either way they options are listed below.
 </p>
-
 <b>This is not a full list of compilers, feel free to look around, however, these are popular choices and among the best.</b>
-
 <p>Windows</p>
 <table>
     <tr>
@@ -413,10 +411,16 @@
     Any of the commands that have (source.cpp) being passed in as an argument can take a list of sources.
     Like this, add_executable(MyApp source_a.cpp source_b.cpp source_c.cpp)
 </p>
+
 <pre class="line-numbers"><code class="language-cmake"># Define CMake Min Version (Check the version number of CMake that you are using)
 cmake_minimum_required(VERSION 4.0)
+</code></pre>
 
-# Define a Project (Add Version number if desired)
+<pre class="line-numbers"><code class="language-cmake"># Define your Root Project name (Add Version number if desired)
+project(MyProject VERSION 1.2.3)
+</code></pre>
+
+<pre class="line-numbers"><code class="language-cmake"># Define your Root Project name (Add Version number if desired)
 project(MyProject VERSION 1.2.3)
 
 # Get the version number info if defined by project command
@@ -424,28 +428,72 @@ project(MyProject VERSION 1.2.3)
 # ${PROJECT_VERSION_MAJOR} → "1"
 # ${PROJECT_VERSION_MINOR} → "2"
 # ${PROJECT_VERSION_PATCH} → "3"
-
-# Create Executable (Creates a .exe file)
-add_executable(MyApp source.cpp)
-
-# Create Static Lib (Used for linking at compile time)
-add_library(MyLib STATIC source.cpp)
-
-# Create Dynamic Lib (Used for linking at run time)
-add_library(MyLib SHARED source.cpp)
-
-# Link a Static Lib to and Executable
-add_library(MyLib STATIC source.cpp)
-add_executable(MyApp source.cpp)
-target_link_libraries(MyApp MyLib)
-
-# Add Header Files
-add_library(MyLib STATIC source.cpp)
-target_include_directories(MyLib INTERFACE ${CMAKE_SOURCE_DIR}/include)
 </code></pre>
 
+<pre class="line-numbers"><code class="language-cmake"># Create Executable (Creates a .exe file)
+add_executable(MyApp source.cpp)
 
+# With multiple source files (Manual Method)
+add_executable(MyApp src1.cpp src2.cpp src3.cpp)
 
+# With multiple source files (Automatic Method) || file function will populate our MY_SRC_FILES variable
+file(GLOB MY_SRC_FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/source/*.c
+)
+add_executable(MyApp ${MY_SRC_FILES})
+</code></pre>
+
+<pre class="line-numbers"><code class="language-cmake"># Create Static Lib (Used for linking at compile time .lib)
+add_library(MyLib STATIC source.cpp)
+</code></pre>
+
+<pre class="line-numbers"><code class="language-cmake"># Create Dynamic Lib (Used for linking at run time .dll)
+add_library(MyLib SHARED source.cpp)
+</code></pre>
+
+<pre class="line-numbers"><code class="language-cmake"># Link a Static Lib to and Executable
+add_library(MyLib STATIC lib_src.cpp)
+add_executable(MyApp app_src.cpp)
+target_link_libraries(MyApp MyLib)    
+</code></pre>
+
+<table>
+    <tr>
+        <th>Scope</th>
+        <th>Target Recieves Headers</th>
+        <th>Dependents Recieve Headers</th>
+    </tr>
+    <tr>
+        <td>PRIVATE</td>
+        <td>Yes</td>
+        <td>No</td>
+    </tr>
+    <tr>
+        <td>PUBLIC</td>
+        <td>Yes</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td>INTERFACE</td>
+        <td>No</td>
+        <td>Yes</td>
+    </tr>
+</table>
+
+<pre class="line-numbers"><code class="language-cmake"># Add header files to the includes path
+# Some Library
+add_library(MyLib STATIC source.cpp)
+
+# PUBLIC -> Current Target (It recieves the includes) || Dependents (They recieve the includes)
+target_include_directories(MyLib PUBLIC ${CMAKE_SOURCE_DIR}/include)
+
+# PRIVATE -> Current Target (It recieves the includes) || Dependents (They do NOTE recieve the includes)
+target_include_directories(MyLib PRIVATE ${CMAKE_SOURCE_DIR}/include)
+
+# INTERFACE -> Current Target (It does not recieve the includes) || Dependents (They recieve the includes)
+target_include_directories(MyLib INTERFACE ${CMAKE_SOURCE_DIR}/include)
+</code></pre>
 
 
 <!--------------------------------------------- FOOTER --------------------------------------------->
