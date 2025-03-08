@@ -12,6 +12,7 @@
     --main-bg: #353535;
     --main-h: #ff7e14;
     --main-bold: #efff14;
+    --light-blue: #96efff;
 }
 
 /* -------------------- GLOBAL SELECTORS -------------------- */
@@ -173,4 +174,10 @@ body {
     margin: 0 auto;
     border-radius: 5px;
     border-color: var(--side-bg-a);
+}
+
+/* -------------------- UTILITY SELECTORS -------------------- */
+
+.highlight {
+    color: var(--light-blue);
 }
